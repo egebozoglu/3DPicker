@@ -1,0 +1,77 @@
+{\rtf1\ansi\ansicpg1254\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww22460\viewh14420\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \'97 Game Scene\
+\
+	- Start Screen\
+		- Ortada oyunun ismi\
+		- Altta Drag for Start yaz\uc0\u305 s\u305 \
+		- Oyun start oldu\uc0\u287 unda bu paneli active false yap\
+\
+\
+	- Game Screen\
+		- Start oldu\uc0\u287 unda objeye (picker) vertical y\'f6nde kuvvet uygula (rigidbody move position veya transform translate forward)\
+		- Touch Input ile objeyi horizontal y\'f6nde hareket ettir\
+		- Objenin collider\uc0\u305 n\u305  biraz y\'fcksek tut\
+		- Her level 3 sectiondan olu\uc0\u351 acak\
+		- Section sonlar\uc0\u305 nda istenen obje say\u305 s\u305  \'e7ukura at\u305 lm\u305 \u351 sa di\u287 er sectiona ge\'e7ilsin, son section ise level success 	olsun. Aksi takdirde level failed olacak\
+		- Objelere bouncy ekle\
+\
+	- End Screen\
+		- Success ise ortada g\'fclen emoji, alt\uc0\u305 nda success yaz\u305 s\u305 , kazan\u305 lan alt\u305 n ve next level butonu\
+		- Failed ise ortada \'fczg\'fcn emoji, alt\uc0\u305 nda failed yaz\u305 s\u305 , restart butonu\
+\
+\'97 Level Editor Scene\
+\
+	- Editor Screen\
+		- Base bir platform\
+		- Sabit aral\uc0\u305 klarla toplam \'fc\'e7 \'e7ukur\
+		- \'c7ukur sonlar\uc0\u305 nda bariyer\
+		- Objeler:\
+			- Sphere\
+			- Box\
+			- X (3D Object)\
+			- Pervane objesi\
+		- Edit\'f6r ara y\'fcz\'fcndeki \'f6zellikler:\
+			- \'c7ukurlara mouse positiondan ray at, collider \'e7ukur ise ilgili \'e7ukur \'fcst\'fcndeki gereken say\uc0\u305 y\u305  d\'fczenlet. Fakat maksimum ondan 		\'f6nceki obje say\u305 s\u305  olsun.\
+			- Her objenin ayr\uc0\u305  ayr\u305  butonu olacak eklemek i\'e7in.\
+			- Butona t\uc0\u305 kland\u305 \u287 \u305 nda imle\'e7 yerine o obje gelecek, ekranda bir yere t\u305 kland\u305 \u287 \u305 nda o objeden olu\u351 acak.\
+			- \'c7arp\uc0\u305  butonuna t\u305 kland\u305 \u287 \u305 nda imle\'e7 default hale d\'f6necek, levelda dola\u351 ma \'f6zelli\u287 i aktif olacak.\
+			- \uc0\u304 ki farkl\u305  kamera kullan\u305 lacak, birisi oyuncu kameras\u305  di\u287 eri top down kamera, ekrandaki butonlarla kameralar switch olacak.\
+			- Objelerin y transformu sabit olacak yerle\uc0\u351 tirirken kolayl\u305 k olmas\u305  a\'e7\u305 s\u305 ndan.\
+			- \'dcst tarafta objelerin rotasyonu mu yoksa pozisyonu mu de\uc0\u287 i\u351 tirilecek bunu se\'e7mek i\'e7in butonlar olacak.\
+\
+\
+\'97 GEL\uc0\u304 \u350 T\u304 RME\
+\
+	- Prefablar\
+		- Picker\
+		- Platform\
+		- \'c7ukur\
+		- Toplanabilir Objeler\
+\
+\
+COLLECTABLELARA RIGIDBODY TARZI \'d6ZELL\uc0\u304 KLER\u304  OLU\u350 TURDUKTAN SONRA VEREB\u304 L\u304 RS\u304 N. BUNUN \u304 \'c7\u304 N ORTAK B\u304 R ABSTRACT CLASS KULLANAB\u304 L\u304 RS\u304 N.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
