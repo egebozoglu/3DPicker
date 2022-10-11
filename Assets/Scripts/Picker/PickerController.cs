@@ -7,7 +7,6 @@ namespace Picker3D.Picker{
     {
         #region Variables
         [Header("Movement")]
-        private Rigidbody rb;
         [SerializeField] private PickerControllerData pickerControllerData;
         [SerializeField] private bool playable = false;
         private Vector3 firstTouchPosition;
@@ -16,7 +15,7 @@ namespace Picker3D.Picker{
 
         private void Awake()
         {
-            rb = transform.GetComponent<Rigidbody>();
+            Application.targetFrameRate = 30;
         }
 
         // Update is called once per frame
@@ -27,18 +26,18 @@ namespace Picker3D.Picker{
 
         private void Movement()
         {
+            TouchInputHorizontal();
             if (playable)
             {
-                transform.Translate(Vector3.forward * pickerControllerData.VerticalSpeed * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.forward, pickerControllerData.VerticalSpeed * Time.deltaTime);
             }
-
-            TouchInputHorizontal();
         }
 
         private void TouchInputHorizontal()
         {
             if (Input.touchCount > 0)
             {
+                playable = true;
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
                     firstTouchPosition = Input.GetTouch(0).position;
@@ -77,11 +76,11 @@ namespace Picker3D.Picker{
 
             if (transform.position.x<pickerControllerData.MinHorizontal)
             {
-                transform.position = new Vector3(pickerControllerData.MinHorizontal, transform.position.y, transform.position.z);
+                transform.position = new Vector3(pickerControllerData.MinHorizontal+0.02f, transform.position.y, transform.position.z);
             }
             else if (transform.position.x > pickerControllerData.MaxHorizontal)
             {
-                transform.position = new Vector3(pickerControllerData.MaxHorizontal, transform.position.y, transform.position.z);
+                transform.position = new Vector3(pickerControllerData.MaxHorizontal-0.02f, transform.position.y, transform.position.z);
             }
             
         }
