@@ -27,7 +27,8 @@ namespace Picker3D.Picker{
         {
             if (playable)
             {
-                rb.MovePosition(rb.position + (Vector3.forward * pickerControllerData.VerticalSpeed * Time.deltaTime));
+                //rb.MovePosition(rb.position + (Vector3.forward * pickerControllerData.VerticalSpeed * Time.deltaTime));
+                transform.Translate(Vector3.forward * pickerControllerData.VerticalSpeed * Time.deltaTime);
             }
 
             int i = 0;
@@ -56,7 +57,8 @@ namespace Picker3D.Picker{
             {
                 rightMove = -1;
             }
-            rb.MovePosition(rb.position + (Vector3.right * rightMove * pickerControllerData.HorizontalSpeed * Time.deltaTime));
+            transform.Translate(Vector3.right * rightMove * pickerControllerData.HorizontalSpeed * Time.deltaTime);
+            //rb.MovePosition(rb.position + (Vector3.right * rightMove * pickerControllerData.HorizontalSpeed * Time.deltaTime));
         }
     }
 }
