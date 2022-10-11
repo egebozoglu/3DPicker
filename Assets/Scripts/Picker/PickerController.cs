@@ -7,6 +7,7 @@ namespace Picker3D.Picker{
     {
         #region Variables
         [Header("Movement")]
+        [SerializeField] private Rigidbody rb;
         [SerializeField] private PickerControllerData pickerControllerData;
         [SerializeField] private bool playable = false;
         private Vector3 firstTouchPosition;
@@ -22,14 +23,14 @@ namespace Picker3D.Picker{
         private void Update()
         {
             Movement();
+            TouchInputHorizontal();
         }
 
         private void Movement()
         {
-            TouchInputHorizontal();
             if (playable)
             {
-                transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.forward, pickerControllerData.VerticalSpeed * Time.deltaTime);
+                rb.MovePosition(Vector3.Lerp(transform.position, transform.position + Vector3.forward, pickerControllerData.VerticalSpeed * Time.deltaTime));
             }
         }
 
@@ -72,7 +73,7 @@ namespace Picker3D.Picker{
                 rightMove = -1;
             }
 
-            transform.Translate(Vector3.right * rightMove * pickerControllerData.HorizontalSpeed * Time.deltaTime);
+            rb.MovePosition(Vector3.Lerp(transform.position, transform.position + (Vector3.right * rightMove), pickerControllerData.HorizontalSpeed * Time.deltaTime));
 
             if (transform.position.x<pickerControllerData.MinHorizontal)
             {
