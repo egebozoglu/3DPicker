@@ -8,8 +8,8 @@ namespace Picker3D.Picker{
         #region Variables
         [Header("Movement")]
         private Rigidbody rb;
+        [SerializeField] private PickerControllerData pickerControllerData;
         [SerializeField] private bool playable = false;
-        [SerializeField] private float speed = 5;
         #endregion
 
         private void Awake()
@@ -27,7 +27,7 @@ namespace Picker3D.Picker{
         {
             if (playable)
             {
-                rb.MovePosition(rb.position + (Vector3.forward * speed * Time.deltaTime));
+                rb.MovePosition(rb.position + (Vector3.forward * pickerControllerData.VerticalSpeed * Time.deltaTime));
             }
 
             int i = 0;
@@ -56,7 +56,7 @@ namespace Picker3D.Picker{
             {
                 rightMove = -1;
             }
-            rb.MovePosition(rb.position + (Vector3.right * rightMove * speed * Time.deltaTime));
+            rb.MovePosition(rb.position + (Vector3.right * rightMove * pickerControllerData.HorizontalSpeed * Time.deltaTime));
         }
     }
 }

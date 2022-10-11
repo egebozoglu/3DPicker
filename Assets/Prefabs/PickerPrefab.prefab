@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b575b37ec454c4617a0b849fa35bf008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickerControllerData: {fileID: 11400000, guid: eea8466b0ddf5934e80b06693876419a,
+    type: 2}
   playable: 0
-  speed: 5
 --- !u!54 &5614283324093961441
 Rigidbody:
   m_ObjectHideFlags: 0
