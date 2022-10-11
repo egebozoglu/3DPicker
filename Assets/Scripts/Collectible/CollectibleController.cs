@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectibleController : MonoBehaviour
+namespace Picker3D.Collectible
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CollectibleController : MonoBehaviour
     {
-        
-    }
+        #region Variables
+        public CollectibleControllerData CollectibleControllerData;
+        #endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Start()
+        {
+            InstantiateObject();
+        }
+
+        void Update()
+        {
+            
+        }
+
+        private void InstantiateObject()
+        {
+            Instantiate(CollectibleControllerData.CollectibleObject, gameObject.transform);
+        }
     }
 }
