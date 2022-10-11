@@ -10,6 +10,8 @@ namespace Picker3D.Picker{
         private Rigidbody rb;
         [SerializeField] private PickerControllerData pickerControllerData;
         [SerializeField] private bool playable = false;
+        private Vector3 firstTouchPosition;
+        private Vector3 secondTouchPosition;
         #endregion
 
         private void Awake()
@@ -31,22 +33,54 @@ namespace Picker3D.Picker{
                 transform.Translate(Vector3.forward * pickerControllerData.VerticalSpeed * Time.deltaTime);
             }
 
-            int i = 0;
+            //int i = 0;
 
-            //loop over every touch found    
-            while (i < Input.touchCount)
+            ////loop over every touch found    
+            //while (i < Input.touchCount)
+            //{
+            //    if (Input.GetTouch(i).position.x > Screen.width / 2)
+            //    {
+            //        //move right    
+            //        HorizontalMove(true);
+            //    }
+            //    if (Input.GetTouch(i).position.x < Screen.width / 2)
+            //    {
+            //        //move left    
+            //        HorizontalMove(false);
+            //    }
+            //    ++i;
+            //}
+
+            TouchInputHorizontal();
+        }
+
+        private void TouchInputHorizontal()
+        {
+            if (Input.touchCount > 0)
             {
-                if (Input.GetTouch(i).position.x > Screen.width / 2)
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
-                    //move right    
-                    HorizontalMove(true);
+                    firstTouchPosition = Input.GetTouch(0).position;
                 }
-                if (Input.GetTouch(i).position.x < Screen.width / 2)
+
+                if (Input.GetTouch(0).phase == TouchPhase.Moved)
                 {
-                    //move left    
-                    HorizontalMove(false);
+                    secondTouchPosition = Input.GetTouch(0).position;
+                    if (secondTouchPosition.x > firstTouchPosition.x)
+                    {
+                        HorizontalMove(true);
+                    }
+                    else
+                    {
+                        HorizontalMove(false);
+                    }
+                    firstTouchPosition = secondTouchPosition;
                 }
-                ++i;
+            }
+            else
+            {
+                firstTouchPosition = Vector3.zero;
+                secondTouchPosition = Vector3.zero;
             }
         }
 
