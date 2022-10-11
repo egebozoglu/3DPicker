@@ -72,7 +72,18 @@ namespace Picker3D.Picker{
             {
                 rightMove = -1;
             }
+
             transform.Translate(Vector3.right * rightMove * pickerControllerData.HorizontalSpeed * Time.deltaTime);
+
+            if (transform.position.x<pickerControllerData.MinHorizontal)
+            {
+                transform.position = new Vector3(pickerControllerData.MinHorizontal, transform.position.y, transform.position.z);
+            }
+            else if (transform.position.x > pickerControllerData.MaxHorizontal)
+            {
+                transform.position = new Vector3(pickerControllerData.MaxHorizontal, transform.position.y, transform.position.z);
+            }
+            
         }
     }
 }
