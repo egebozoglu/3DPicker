@@ -29,27 +29,8 @@ namespace Picker3D.Picker{
         {
             if (playable)
             {
-                //rb.MovePosition(rb.position + (Vector3.forward * pickerControllerData.VerticalSpeed * Time.deltaTime));
                 transform.Translate(Vector3.forward * pickerControllerData.VerticalSpeed * Time.deltaTime);
             }
-
-            //int i = 0;
-
-            ////loop over every touch found    
-            //while (i < Input.touchCount)
-            //{
-            //    if (Input.GetTouch(i).position.x > Screen.width / 2)
-            //    {
-            //        //move right    
-            //        HorizontalMove(true);
-            //    }
-            //    if (Input.GetTouch(i).position.x < Screen.width / 2)
-            //    {
-            //        //move left    
-            //        HorizontalMove(false);
-            //    }
-            //    ++i;
-            //}
 
             TouchInputHorizontal();
         }
@@ -92,7 +73,6 @@ namespace Picker3D.Picker{
                 rightMove = -1;
             }
             transform.Translate(Vector3.right * rightMove * pickerControllerData.HorizontalSpeed * Time.deltaTime);
-            //rb.MovePosition(rb.position + (Vector3.right * rightMove * pickerControllerData.HorizontalSpeed * Time.deltaTime));
         }
     }
 }
