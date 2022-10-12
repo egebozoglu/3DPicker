@@ -9,7 +9,8 @@ namespace Picker3D.Picker{
         [Header("Movement")]
         [SerializeField] private Rigidbody rb;
         [SerializeField] private PickerControllerData pickerControllerData;
-        [SerializeField] private bool playable = false;
+        public bool Playable = false;
+        private bool initialPlayable = false;
         private Vector3 targetPosition = Vector3.zero;
         private Vector2 firstTouchPosition;
         private Vector2 secondTouchPosition;
@@ -49,25 +50,11 @@ namespace Picker3D.Picker{
         {
             if (Input.touchCount > 0)
             {
-                playable = true;
-                //if (Input.GetTouch(0).phase == TouchPhase.Began)
-                //{
-                //    firstTouchPosition = Input.GetTouch(0).position;
-                //}
-
-                //if (Input.GetTouch(0).phase == TouchPhase.Moved)
-                //{
-                //    secondTouchPosition = Input.GetTouch(0).position;
-                //    if (secondTouchPosition.x > firstTouchPosition.x)
-                //    {
-                //        HorizontalMove(true);
-                //    }
-                //    else
-                //    {
-                //        HorizontalMove(false);
-                //    }
-                //    firstTouchPosition = secondTouchPosition;
-                //}
+                if (!initialPlayable)
+                {
+                    Playable = true;
+                    initialPlayable = false;
+                }
 
                 secondTouchPosition = Input.GetTouch(0).position;
                 if (secondTouchPosition.x > firstTouchPosition.x)
@@ -89,7 +76,7 @@ namespace Picker3D.Picker{
                 firstTouchPosition = Vector2.zero;
                 secondTouchPosition = Vector2.zero;
 
-                if (playable)
+                if (Playable)
                 {
                     targetPosition = transform.position + Vector3.forward;
                 }
@@ -104,13 +91,21 @@ namespace Picker3D.Picker{
                 rightMove = -1;
             }
 
-            if (playable)
+            if (Playable)
             {
                 targetPosition = transform.position + Vector3.forward + (Vector3.right * rightMove);
             }
             else
             {
                 targetPosition = transform.position + (Vector3.right * rightMove);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag.Equals("EndSection"))
+            {
+                Playable = false;
             }
         }
     }
