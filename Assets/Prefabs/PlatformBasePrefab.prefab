@@ -1217,9 +1217,10 @@ GameObject:
   - component: {fileID: 2612354659360686589}
   - component: {fileID: 2612354659360686590}
   - component: {fileID: 2612354659360686591}
+  - component: {fileID: 88723407}
   m_Layer: 0
   m_Name: CollectibleRequired2
-  m_TagString: Untagged
+  m_TagString: CollectibleRequired
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1301,6 +1302,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.5, z: 10}
   m_Center: {x: 0, y: -1.25, z: 0}
+--- !u!114 &88723407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2612354659360686585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97167e7a632526b4597284a89e96882a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredCollectibleCount: 0
+  CollectedCount: 0
+  CollectingStarted: 0
 --- !u!1 &2612354659488378025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,9 +1361,10 @@ GameObject:
   - component: {fileID: 2612354659651934121}
   - component: {fileID: 2612354659651934122}
   - component: {fileID: 2612354659651934123}
+  - component: {fileID: 443337505}
   m_Layer: 0
   m_Name: CollectibleRequired3
-  m_TagString: Untagged
+  m_TagString: CollectibleRequired
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1429,6 +1446,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.5, z: 10}
   m_Center: {x: 0, y: -1.25, z: 0}
+--- !u!114 &443337505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2612354659651934117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97167e7a632526b4597284a89e96882a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredCollectibleCount: 0
+  CollectedCount: 0
+  CollectingStarted: 0
 --- !u!1 &2612354659728393779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,9 +1473,10 @@ GameObject:
   - component: {fileID: 2612354659728393783}
   - component: {fileID: 2612354659728393776}
   - component: {fileID: 2612354659728393777}
+  - component: {fileID: 1941674785}
   m_Layer: 0
   m_Name: CollectibleRequired1
-  m_TagString: Untagged
+  m_TagString: CollectibleRequired
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1525,6 +1558,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.5, z: 10}
   m_Center: {x: 0, y: -1.25, z: 0}
+--- !u!114 &1941674785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2612354659728393779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97167e7a632526b4597284a89e96882a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredCollectibleCount: 0
+  CollectedCount: 0
+  CollectingStarted: 0
 --- !u!1 &2612354659984461732
 GameObject:
   m_ObjectHideFlags: 0

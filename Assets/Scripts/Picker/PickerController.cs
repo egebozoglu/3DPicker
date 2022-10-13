@@ -6,11 +6,13 @@ namespace Picker3D.Picker{
     public class PickerController : MonoBehaviour
     {
         #region Variables
+        public static PickerController Instance;
+
         [Header("Movement")]
         [SerializeField] private Rigidbody rb;
         [SerializeField] private PickerControllerData pickerControllerData;
         public bool Playable = false;
-        private bool initialPlayable = false;
+        private bool initialPlayable = true;
         private Vector3 targetPosition = Vector3.zero;
         private Vector2 firstTouchPosition;
         private Vector2 secondTouchPosition;
@@ -19,6 +21,14 @@ namespace Picker3D.Picker{
         private void Awake()
         {
             Application.targetFrameRate = 30;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         // Update is called once per frame
@@ -50,7 +60,7 @@ namespace Picker3D.Picker{
         {
             if (Input.touchCount > 0)
             {
-                if (!initialPlayable)
+                if (initialPlayable)
                 {
                     Playable = true;
                     initialPlayable = false;
@@ -67,7 +77,14 @@ namespace Picker3D.Picker{
                 }
                 else
                 {
-                    targetPosition = transform.position + Vector3.forward;
+                    if (Playable)
+                    {
+                        targetPosition = transform.position + Vector3.forward;
+                    }
+                    else
+                    {
+                        targetPosition = Vector3.zero;
+                    }
                 }
                 firstTouchPosition = secondTouchPosition;
             }

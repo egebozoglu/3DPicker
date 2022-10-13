@@ -15,11 +15,6 @@ namespace Picker3D.Collectible
             InstantiateObject();
         }
 
-        void Update()
-        {
-            
-        }
-
         private void InstantiateObject()
         {
             Instantiate(CollectibleControllerData.CollectibleObject, gameObject.transform);
