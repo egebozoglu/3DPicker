@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 namespace Picker3D.Manager
 {
@@ -11,6 +13,9 @@ namespace Picker3D.Manager
 
         [Header("Screens")]
         public List<GameObject> Screens;
+
+        [Header("Game Screen Texts")]
+        [SerializeField] private TextMeshProUGUI gameCoinText; // in game coin amount
         #endregion
 
         private void Awake()
@@ -39,6 +44,7 @@ namespace Picker3D.Manager
         public void GameScreen()
         {
             ActivatingScreen(1);
+            gameCoinText.text = PlayerPrefs.GetInt("CoinAmount").ToString();
         }
 
         public void EndScreen()
