@@ -106,6 +106,7 @@ namespace Picker3D.Picker{
             if (other.gameObject.tag.Equals("EndSection"))
             {
                 Playable = false;
+                Destroy(other.gameObject,0f);
             }
         }
     }
