@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Picker3D.CollectibleRequired;
+using Picker3D.Manager;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,6 +64,7 @@ namespace Picker3D.Picker{
             {
                 if (initialPlayable)
                 {
+                    UIManager.Instance.GameScreen();
                     Playable = true;
                     initialPlayable = false;
                 }
@@ -124,6 +127,7 @@ namespace Picker3D.Picker{
             {
                 Playable = false;
                 Destroy(other.gameObject,0f);
+                
             }
             else if (other.gameObject.tag.Equals("FinishSection"))
             {

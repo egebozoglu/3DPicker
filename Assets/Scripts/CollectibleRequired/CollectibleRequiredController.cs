@@ -1,3 +1,4 @@
+using Picker3D.Manager;
 using Picker3D.Picker;
 using System.Collections;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace Picker3D.CollectibleRequired
             }
             else
             {
-                // level failed
+                UIManager.Instance.EndScreen();
             }
         }
     }

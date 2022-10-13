@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97167e7a632526b4597284a89e96882a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequiredCollectibleCount: 10
+  RequiredCollectibleCount: 0
   CollectedCount: 0
   CollectingStarted: 0
   collectibleTextMesh: {fileID: 4775106338745128843}
