@@ -125,6 +125,12 @@ namespace Picker3D.Picker{
                 Playable = false;
                 Destroy(other.gameObject,0f);
             }
+            else if (other.gameObject.tag.Equals("FinishSection"))
+            {
+                Playable = false;
+                Destroy(other.gameObject, 0f);
+                // Call finish function from UI Manager Script
+            }
         }
     }
 }
