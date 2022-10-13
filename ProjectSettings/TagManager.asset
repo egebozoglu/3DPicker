@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - EndSection
+  - CollectibleRequired
   layers:
   - Default
   - TransparentFX
