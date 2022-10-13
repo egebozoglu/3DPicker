@@ -129,11 +129,11 @@ namespace Picker3D.Picker{
                 Destroy(other.gameObject,0f);
                 
             }
-            else if (other.gameObject.tag.Equals("FinishSection"))
+            else if (other.gameObject.tag.Equals("LevelFinish"))
             {
                 Playable = false;
+                UIManager.Instance.EndScreen(0, GameManager.Instance.TotalCoins);
                 Destroy(other.gameObject, 0f);
-                // Call finish function from UI Manager Script
             }
         }
     }

@@ -38,10 +38,11 @@ namespace Picker3D.CollectibleRequired
                 PickerController.Instance.Playable = true;
                 CollectingStarted = false;
                 transform.GetChild(0).GetComponent<Animation>().clip = null;
+                GameManager.Instance.TotalCoins += CollectedCount;
             }
             else
             {
-                UIManager.Instance.EndScreen();
+                UIManager.Instance.EndScreen(1, 0);
             }
         }
     }

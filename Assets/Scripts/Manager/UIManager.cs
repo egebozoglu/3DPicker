@@ -16,6 +16,10 @@ namespace Picker3D.Manager
 
         [Header("Game Screen Texts")]
         [SerializeField] private TextMeshProUGUI gameCoinText; // in game coin amount
+
+        [Header("End Screen Variables")]
+        [SerializeField] private List<GameObject> endScreens = new List<GameObject>();
+        [SerializeField] private TextMeshProUGUI endCoinText; // level end coin amount
         #endregion
 
         private void Awake()
@@ -47,9 +51,11 @@ namespace Picker3D.Manager
             gameCoinText.text = PlayerPrefs.GetInt("CoinAmount").ToString();
         }
 
-        public void EndScreen()
+        public void EndScreen(int index, int coinAmount)
         {
             ActivatingScreen(2);
+            endScreens[index].SetActive(true);
+            endCoinText.text = coinAmount.ToString();
         }
 
         private void ActivatingScreen(int index)

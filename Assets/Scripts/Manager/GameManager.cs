@@ -8,13 +8,30 @@ namespace Picker3D.Manager
     public class GameManager : MonoBehaviour
     {
         #region Variables
+        public static GameManager Instance;
+
         [Header("Skybox")]
         [SerializeField] private List<Material> skyboxMaterials = new List<Material>();
 
         [Header("Picker")]
         [SerializeField] private GameObject pickerPrefab;
         [SerializeField] private GameObject mainCamera;
+
+        [Header("Game Mechanics")]
+        public int TotalCoins = 0;
         #endregion
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
 
         // Start is called before the first frame update
         void Start()
