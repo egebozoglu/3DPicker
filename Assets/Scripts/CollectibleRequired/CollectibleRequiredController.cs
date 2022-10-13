@@ -12,10 +12,13 @@ namespace Picker3D.CollectibleRequired
         public int CollectedCount;
         public bool CollectingStarted = false;
         private int lerpTime = 10;
+        [SerializeField] private TextMesh collectibleTextMesh;
         #endregion
 
         private void Update()
         {
+            collectibleTextMesh.text = CollectedCount.ToString() + "/" + RequiredCollectibleCount.ToString();
+
             if (CollectingStarted)
             {
                 StartCoroutine(CollectingCheck());
