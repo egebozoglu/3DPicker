@@ -8,23 +8,10 @@ namespace Picker3D.EditorScene
     {
         #region Variables
         [Header("Prefabs")]
-        public GameObject platformBasePrefab;
-        public GameObject pickerPrefab;
-        public GameObject spherePrefab;
-        public GameObject cubePrefab;
-        public GameObject cylinderPrefab;
+        public List<GameObject> objectPrefabs = new List<GameObject>();
+
+        [Space]
+        [HideInInspector]public List<GameObject> instantiatedObjects = new List<GameObject>();
         #endregion
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
