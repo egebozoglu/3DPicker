@@ -42,6 +42,7 @@ namespace Picker3D.Picker{
             Movement();
         }
 
+        #region Movement
         private void Movement()
         {
             if (targetPosition != Vector3.zero)
@@ -122,6 +123,7 @@ namespace Picker3D.Picker{
                 targetPosition = transform.position + (Vector3.right * rightMove);
             }
         }
+        #endregion
 
         private void OnTriggerEnter(Collider other)
         {
