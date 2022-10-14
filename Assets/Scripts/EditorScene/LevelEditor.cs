@@ -110,14 +110,20 @@ namespace Picker3D.EditorScene {
             if (GUILayout.Button("Generate Color"))
             {
                 manager.Color = Random.ColorHSV();
-                foreach (GameObject platformObject in manager.PlatformObjectsToColorized)
+            }
+
+            SetPlatformColor(manager);
+        }
+
+        private void SetPlatformColor(LevelEditorManager manager)
+        {
+            foreach (GameObject platformObject in manager.PlatformObjectsToColorized)
+            {
+                Renderer renderer = platformObject.GetComponent<Renderer>();
+
+                if (renderer != null)
                 {
-                    Renderer renderer = platformObject.GetComponent<Renderer>();
-                    
-                    if (renderer != null)
-                    {
-                        renderer.sharedMaterial.color = manager.Color;
-                    }
+                    renderer.sharedMaterial.color = manager.Color;
                 }
             }
         }
