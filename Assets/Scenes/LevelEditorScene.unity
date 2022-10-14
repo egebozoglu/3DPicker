@@ -196,7 +196,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.06729187, g: 0.09812309, b: 0.060288634, a: 1}
+    - _Color: {r: 0.0022225447, g: 0.08913053, b: 0.023950867, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &47658223
@@ -272,7 +272,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.06729187, g: 0.09812309, b: 0.060288634, a: 1}
+    - _Color: {r: 0.0022225447, g: 0.08913053, b: 0.023950867, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &200364595
@@ -348,7 +348,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.06729187, g: 0.09812309, b: 0.060288634, a: 1}
+    - _Color: {r: 0.0022225447, g: 0.08913053, b: 0.023950867, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &207244661
@@ -424,9 +424,15 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.06729187, g: 0.09812309, b: 0.060288634, a: 1}
+    - _Color: {r: 0.0022225447, g: 0.08913053, b: 0.023950867, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+--- !u!102 &253158578 stripped
+TextMesh:
+  m_CorrespondingSourceObject: {fileID: 3825907302873014923, guid: 36c747b1b65284d4082beff102905992,
+    type: 3}
+  m_PrefabInstance: {fileID: 1237434899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &739115508
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,8 +489,12 @@ MonoBehaviour:
   - {fileID: 1237434902}
   - {fileID: 1237434900}
   - {fileID: 1237434906}
-  color: {r: 0.06729187, g: 0.09812309, b: 0.060288634, a: 1}
-  instantiatedObjects: []
+  FirstCompleteText: {fileID: 1988842716}
+  SecondCompleteText: {fileID: 253158578}
+  ThirdCompleteText: {fileID: 2050868306}
+  LoadedLevel: {fileID: 0}
+  Color: {r: 0.0022225447, g: 0.08913053, b: 0.023950867, a: 1}
+  InstantiatedObjects: []
 --- !u!1 &749386698
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +667,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.06729187, g: 0.09812309, b: 0.060288634, a: 1}
+    - _Color: {r: 0.0022225447, g: 0.08913053, b: 0.023950867, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &873041740
@@ -733,7 +743,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.06729187, g: 0.09812309, b: 0.060288634, a: 1}
+    - _Color: {r: 0.0022225447, g: 0.08913053, b: 0.023950867, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &931165825
@@ -809,7 +819,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.06729187, g: 0.09812309, b: 0.060288634, a: 1}
+    - _Color: {r: 0.0022225447, g: 0.08913053, b: 0.023950867, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!1 &1189250222
@@ -1125,3 +1135,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bad44f2d7b86a49ddbd595af6c21d6c4, type: 3}
+--- !u!102 &1988842716 stripped
+TextMesh:
+  m_CorrespondingSourceObject: {fileID: 4775106338745128843, guid: 36c747b1b65284d4082beff102905992,
+    type: 3}
+  m_PrefabInstance: {fileID: 1237434899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!102 &2050868306 stripped
+TextMesh:
+  m_CorrespondingSourceObject: {fileID: 5396644402772445081, guid: 36c747b1b65284d4082beff102905992,
+    type: 3}
+  m_PrefabInstance: {fileID: 1237434899}
+  m_PrefabAsset: {fileID: 0}

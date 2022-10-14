@@ -12,10 +12,17 @@ namespace Picker3D.EditorScene
         public List<GameObject> PlatformObjectsToColorized;
 
         [Space]
-        [Header("Data for Level Scriptable")]
+
+        [Header("Text Mesh Pros")]
+        public TextMesh FirstCompleteText;
+        public TextMesh SecondCompleteText;
+        public TextMesh ThirdCompleteText;
+
+        // Data for Level Scriptable
         [HideInInspector] public LevelScriptable LoadedLevel;
         [HideInInspector] public Color Color;
         [HideInInspector] public List<GameObject> InstantiatedObjects = new List<GameObject>();
+
         #endregion
 
         private void Update()

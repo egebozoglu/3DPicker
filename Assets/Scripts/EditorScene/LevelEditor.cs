@@ -8,15 +8,17 @@ namespace Picker3D.EditorScene {
     public class LevelEditor : Editor
     {
         #region Variables
+        LevelEditorManager manager;
+
         // Level
         private string currentLevelName;
         private string savingError = string.Empty;
         private List<LevelScriptable> levelScriptables = new List<LevelScriptable>();
 
         // Complete Counts
-        private string firstComplete;
-        private string secondComplete;
-        private string thirdComplete;
+        private string firstComplete = "0";
+        private string secondComplete = "0";
+        private string thirdComplete = "0";
 
         // Levels Path
         private int levelIndex = 0;
@@ -27,20 +29,20 @@ namespace Picker3D.EditorScene {
         {
             base.OnInspectorGUI();
 
-            LevelEditorManager manager = (LevelEditorManager)target;
+            manager = (LevelEditorManager)target;
 
-            GUINewLevel(manager);
-            GUILoadLevel(manager);
-            GUIGeneratePlatformColor(manager);
-            GUICreate(manager);
-            GUIRemove(manager);
+            GUINewLevel();
+            GUILoadLevel();
+            GUIGeneratePlatformColor();
+            GUICreate();
+            GUIRemove();
             GUISetCompleteCounts();
-            GUISaveLevel(manager);
+            GUISaveLevel();
         }
 
         #region GUI Functions
 
-        private void GUINewLevel(LevelEditorManager manager)
+        private void GUINewLevel()
         {
             GUILine();
 
@@ -58,7 +60,7 @@ namespace Picker3D.EditorScene {
                 manager.Color = Random.ColorHSV();
             }
         }
-        private void GUILoadLevel(LevelEditorManager manager)
+        private void GUILoadLevel()
         {
             GUILine();
 
@@ -83,12 +85,12 @@ namespace Picker3D.EditorScene {
             {
                 if (levelScriptables.Count!=0)
                 {
-                    LoadLevelClick(levelScriptables[levelIndex], manager);
+                    LoadLevelClick(levelScriptables[levelIndex]);
                 }
             }
         }
 
-        private void LoadLevelClick(LevelScriptable levelScriptable, LevelEditorManager manager)
+        private void LoadLevelClick(LevelScriptable levelScriptable)
         {
             // destroy existing objects
             foreach (GameObject item in manager.InstantiatedObjects)
@@ -101,7 +103,7 @@ namespace Picker3D.EditorScene {
             for (int i = 0; i < levelScriptable.AllObjects.Count; i++)
             {
                 var levelObject = levelScriptable.AllObjects[i];
-                GameObject instantiatedObject= InstantiateObject(levelObject.ObjectPrefab, manager);
+                GameObject instantiatedObject= InstantiateObject(levelObject.ObjectPrefab);
                 instantiatedObject.transform.position = levelObject.Position;
                 instantiatedObject.transform.rotation = levelObject.Rotation;
             }
@@ -124,7 +126,7 @@ namespace Picker3D.EditorScene {
             manager.LoadedLevel = levelScriptable;
         }
 
-        private void GUIGeneratePlatformColor(LevelEditorManager manager)
+        private void GUIGeneratePlatformColor()
         {
             GUILine();
 
@@ -135,10 +137,10 @@ namespace Picker3D.EditorScene {
                 manager.Color = Random.ColorHSV();
             }
 
-            SetPlatformColor(manager);
+            SetPlatformColor();
         }
 
-        private void SetPlatformColor(LevelEditorManager manager)
+        private void SetPlatformColor()
         {
             foreach (GameObject platformObject in manager.PlatformObjectsToColorized)
             {
@@ -151,7 +153,7 @@ namespace Picker3D.EditorScene {
             }
         }
 
-        private void GUICreate(LevelEditorManager manager)
+        private void GUICreate()
         {
             GUILine();
 
@@ -161,12 +163,12 @@ namespace Picker3D.EditorScene {
             {
                 if (GUILayout.Button(manager.ObjectPrefabs[i].name))
                 {
-                    InstantiateObject(manager.ObjectPrefabs[i], manager);
+                    InstantiateObject(manager.ObjectPrefabs[i]);
                 }
             }
         }
 
-        private void GUIRemove(LevelEditorManager manager)
+        private void GUIRemove()
         {
             GUILine();
 
@@ -202,10 +204,14 @@ namespace Picker3D.EditorScene {
             GUILayout.Label("Phase 3- ");
             thirdComplete = EditorGUILayout.TextField(thirdComplete);
 
+            manager.FirstCompleteText.text = "0/" + firstComplete;
+            manager.SecondCompleteText.text = "0/" + secondComplete;
+            manager.ThirdCompleteText.text = "0/" + thirdComplete;
+
             GUILayout.EndHorizontal();
         }
 
-        private void GUISaveLevel(LevelEditorManager manager)
+        private void GUISaveLevel()
         {
             GUILine();
 
@@ -216,11 +222,11 @@ namespace Picker3D.EditorScene {
             GUILayout.Label(savingError, EditorStyles.label);
             if (GUILayout.Button("Save Level"))
             {
-                SaveLevelClick(manager);
+                SaveLevelClick();
             }
         }
 
-        private void SaveLevelClick(LevelEditorManager manager)
+        private void SaveLevelClick()
         {
             if (!string.IsNullOrEmpty(firstComplete) && !string.IsNullOrEmpty(secondComplete) && !string.IsNullOrEmpty(thirdComplete))
             {
@@ -234,7 +240,7 @@ namespace Picker3D.EditorScene {
                     {
                         LevelScriptable levelScriptable = manager.LoadedLevel;
                         // set level data
-                        SetLevelData(levelScriptable, manager);
+                        SetLevelData(levelScriptable);
 
                         EditorUtility.SetDirty(levelScriptable);
 
@@ -245,7 +251,7 @@ namespace Picker3D.EditorScene {
                         LevelScriptable levelScriptable = CreateInstance<LevelScriptable>();
                         // set level data
                         levelScriptable.Level = levelScriptables.Count+1;
-                        SetLevelData(levelScriptable, manager);
+                        SetLevelData(levelScriptable);
 
                         string fileName = levelPathToSave + levelScriptable.Level.ToString() +".asset";
 
@@ -272,16 +278,16 @@ namespace Picker3D.EditorScene {
             }
         }
 
-        private void SetLevelData(LevelScriptable levelScriptable, LevelEditorManager manager)
+        private void SetLevelData(LevelScriptable levelScriptable)
         {
             levelScriptable.PlatformColor = manager.Color;
-            levelScriptable.AllObjects = CreateLevelObjectList(manager);
+            levelScriptable.AllObjects = CreateLevelObjectList();
             levelScriptable.Complete1 = int.Parse(firstComplete);
             levelScriptable.Complete2 = int.Parse(secondComplete);
             levelScriptable.Complete3 = int.Parse(thirdComplete);
         }
 
-        private List<LevelObject> CreateLevelObjectList(LevelEditorManager manager)
+        private List<LevelObject> CreateLevelObjectList()
         {
             List<LevelObject> levelObjects = new List<LevelObject>();
 
@@ -317,7 +323,7 @@ namespace Picker3D.EditorScene {
         }
         #endregion
 
-        private GameObject InstantiateObject(GameObject prefab, LevelEditorManager manager)
+        private GameObject InstantiateObject(GameObject prefab)
         {
             GameObject prefabObject;
 
