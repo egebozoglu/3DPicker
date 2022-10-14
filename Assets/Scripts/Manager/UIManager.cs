@@ -14,8 +14,12 @@ namespace Picker3D.Manager
         [Header("Screens")]
         public List<GameObject> Screens;
 
-        [Header("Game Screen Texts")]
+        [Header("Game Screen Variables")]
         [SerializeField] private TextMeshProUGUI gameCoinText; // in game coin amount
+        [SerializeField] private TextMeshProUGUI currentLevel;
+        [SerializeField] private TextMeshProUGUI nextLevel;
+        [SerializeField] private List<Image> indicators = new List<Image>();
+        private Color indicatorColor = new Color(1, 0.5f, 0, 1);
 
         [Header("End Screen Variables")]
         [SerializeField] private List<GameObject> endScreens = new List<GameObject>();
@@ -34,12 +38,15 @@ namespace Picker3D.Manager
             }
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Start()
         {
-
+            // set level texts
+            var level = PlayerPrefs.GetInt("Level");
+            currentLevel.text = level.ToString();
+            nextLevel.text = (level + 1).ToString();
         }
 
+        #region Screens
         public void StartScreen()
         {
             ActivatingScreen(0);
@@ -47,12 +54,14 @@ namespace Picker3D.Manager
 
         public void GameScreen()
         {
+            // activate screen and set coin amount
             ActivatingScreen(1);
             gameCoinText.text = PlayerPrefs.GetInt("CoinAmount").ToString();
         }
 
         public void EndScreen(int index, int coinAmount)
         {
+            // activate screen, decide screen type and set coin amount
             ActivatingScreen(2);
             endScreens[index].SetActive(true);
             endCoinText.text = coinAmount.ToString();
@@ -60,6 +69,7 @@ namespace Picker3D.Manager
 
         private void ActivatingScreen(int index)
         {
+            // activating screen depends on index
             for (int i = 0; i < Screens.Count; i++)
             {
                 if (i==index)
@@ -71,6 +81,13 @@ namespace Picker3D.Manager
                     Screens[i].SetActive(false);
                 }
             }
+        }
+        #endregion
+
+        public void ChangeIndicator(int index)
+        {
+            // change indicator color
+            indicators[index].color = indicatorColor;
         }
     }
 }

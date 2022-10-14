@@ -31,6 +31,12 @@ namespace Picker3D.Manager
             {
                 Destroy(gameObject);
             }
+
+            var level = PlayerPrefs.GetInt("Level");
+            if (level==0)
+            {
+                PlayerPrefs.SetInt("Level", 1);
+            }
         }
 
         // Start is called before the first frame update

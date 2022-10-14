@@ -13,8 +13,14 @@ namespace Picker3D.CollectibleRequired
         public int CollectedCount;
         public bool CollectingStarted = false;
         private int lerpTime = 10;
+        private int requiredIndex;
         [SerializeField] private TextMesh collectibleTextMesh;
         #endregion
+
+        private void Awake()
+        {
+            requiredIndex = int.Parse(gameObject.name[gameObject.name.Length - 1].ToString());
+        }
 
         private void Update()
         {
@@ -39,6 +45,7 @@ namespace Picker3D.CollectibleRequired
                 CollectingStarted = false;
                 transform.GetChild(0).GetComponent<Animation>().clip = null;
                 GameManager.Instance.TotalCoins += CollectedCount;
+                UIManager.Instance.ChangeIndicator(requiredIndex - 1);
             }
             else
             {

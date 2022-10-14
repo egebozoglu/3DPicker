@@ -133,6 +133,8 @@ namespace Picker3D.Picker{
             {
                 Playable = false;
                 UIManager.Instance.EndScreen(0, GameManager.Instance.TotalCoins);
+                var level = PlayerPrefs.GetInt("Level");
+                PlayerPrefs.SetInt("Level", level + 1);
                 Destroy(other.gameObject, 0f);
             }
         }
