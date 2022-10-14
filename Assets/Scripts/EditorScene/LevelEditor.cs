@@ -29,6 +29,7 @@ namespace Picker3D.EditorScene {
 
             LevelEditorManager manager = (LevelEditorManager)target;
 
+            GUINewLevel(manager);
             GUILoadLevel(manager);
             GUIGeneratePlatformColor(manager);
             GUICreate(manager);
@@ -38,6 +39,25 @@ namespace Picker3D.EditorScene {
         }
 
         #region GUI Functions
+
+        private void GUINewLevel(LevelEditorManager manager)
+        {
+            GUILine();
+
+            GUILayout.Label("New Level", EditorStyles.boldLabel);
+
+            if (GUILayout.Button("New Level"))
+            {
+                // destroy existing objects
+                foreach (GameObject item in manager.InstantiatedObjects)
+                {
+                    DestroyImmediate(item);
+                }
+                manager.InstantiatedObjects.Clear();
+                manager.LoadedLevel = null;
+                manager.Color = Random.ColorHSV();
+            }
+        }
         private void GUILoadLevel(LevelEditorManager manager)
         {
             GUILine();
@@ -80,7 +100,10 @@ namespace Picker3D.EditorScene {
             // create selected level objects
             for (int i = 0; i < levelScriptable.AllObjects.Count; i++)
             {
-                InstantiateObject(levelScriptable.AllObjects[i], manager);
+                var levelObject = levelScriptable.AllObjects[i];
+                GameObject instantiatedObject= InstantiateObject(levelObject.ObjectPrefab, manager);
+                instantiatedObject.transform.position = levelObject.Position;
+                instantiatedObject.transform.rotation = levelObject.Rotation;
             }
             firstComplete = levelScriptable.Complete1.ToString();
             secondComplete = levelScriptable.Complete2.ToString();
@@ -231,7 +254,7 @@ namespace Picker3D.EditorScene {
                     }
 
                     manager.LoadedLevel = null;
-                    manager.Color = Color.blue;
+                    manager.Color = Random.ColorHSV();
                     foreach (var item in manager.InstantiatedObjects)
                     {
                         DestroyImmediate(item);
@@ -252,10 +275,32 @@ namespace Picker3D.EditorScene {
         private void SetLevelData(LevelScriptable levelScriptable, LevelEditorManager manager)
         {
             levelScriptable.PlatformColor = manager.Color;
-            levelScriptable.AllObjects = manager.InstantiatedObjects;
+            levelScriptable.AllObjects = CreateLevelObjectList(manager);
             levelScriptable.Complete1 = int.Parse(firstComplete);
             levelScriptable.Complete2 = int.Parse(secondComplete);
             levelScriptable.Complete3 = int.Parse(thirdComplete);
+        }
+
+        private List<LevelObject> CreateLevelObjectList(LevelEditorManager manager)
+        {
+            List<LevelObject> levelObjects = new List<LevelObject>();
+
+            foreach (GameObject instantiatedObject in manager.InstantiatedObjects)
+            {
+                LevelObject levelObject = new LevelObject();
+                for (int i = 0; i < manager.ObjectPrefabs.Count; i++)
+                {
+                    if (instantiatedObject.name.Contains(manager.ObjectPrefabs[i].name))
+                    {
+                        levelObject.ObjectPrefab = manager.ObjectPrefabs[i];
+                    }
+                }
+                levelObject.Position = instantiatedObject.transform.position;
+                levelObject.Rotation = instantiatedObject.transform.rotation;
+                levelObjects.Add(levelObject);
+            }
+
+            return levelObjects;
         }
 
         private void GUILine()
@@ -272,7 +317,7 @@ namespace Picker3D.EditorScene {
         }
         #endregion
 
-        private void InstantiateObject(GameObject prefab, LevelEditorManager manager)
+        private GameObject InstantiateObject(GameObject prefab, LevelEditorManager manager)
         {
             GameObject prefabObject;
 
@@ -291,6 +336,7 @@ namespace Picker3D.EditorScene {
             prefabObject = Instantiate(prefab, newPosition, Quaternion.identity);
 
             manager.InstantiatedObjects.Add(prefabObject);
+            return prefabObject;
         }
     }
 }
