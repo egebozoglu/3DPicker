@@ -35,11 +35,13 @@ namespace Picker3D.CollectibleRequired
                 collectibleTextMesh.text = string.Empty;
             }
 
+            // 
             if (move)
             {
                 transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 0, transform.position.z), lerpTime * Time.deltaTime);
             }
 
+            // avoid multiple count sending
             if (collectedCountSent)
             {
                 GameManager.Instance.TotalCoins += CollectedCount;
@@ -68,9 +70,11 @@ namespace Picker3D.CollectibleRequired
                 }
                 else
                 {
+                    collected = true;
                     SoundManager.Instance.PlaySuccessClip(1);
                     UIManager.Instance.EndScreen(1, 0);
                 }
+
             }
         }
     }
