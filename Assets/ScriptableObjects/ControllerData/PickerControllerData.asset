@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e01615ff8384a4cb56d891344d018f, type: 3}
   m_Name: PickerControllerData
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 30
