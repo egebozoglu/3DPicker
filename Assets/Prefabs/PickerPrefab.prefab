@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5614283324093961447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5614283326180864939}
@@ -51,7 +51,7 @@ MonoBehaviour:
   rb: {fileID: 5614283324093961441}
   pickerControllerData: {fileID: 11400000, guid: eea8466b0ddf5934e80b06693876419a,
     type: 2}
-  playable: 0
+  Playable: 0
 --- !u!54 &5614283324093961441
 Rigidbody:
   m_ObjectHideFlags: 0
