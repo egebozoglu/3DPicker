@@ -8,7 +8,7 @@ namespace Picker3D.EditorScene
     {
         public int Level;
         public Color PlatformColor;
-        public List<GameObject> allObjects = new List<GameObject>();
+        public List<GameObject> AllObjects = new List<GameObject>();
         public int Complete1;
         public int Complete2;
         public int Complete3;

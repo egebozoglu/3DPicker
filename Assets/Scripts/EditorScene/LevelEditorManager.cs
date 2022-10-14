@@ -8,10 +8,20 @@ namespace Picker3D.EditorScene
     {
         #region Variables
         [Header("Prefabs")]
-        public List<GameObject> objectPrefabs = new List<GameObject>();
+        public List<GameObject> ObjectPrefabs = new List<GameObject>();
+        public List<GameObject> PlatformObjectsToColorized;
 
         [Space]
-        [HideInInspector]public List<GameObject> instantiatedObjects = new List<GameObject>();
+        [Header("Data for Level Scriptable")]
+        [HideInInspector] public LevelScriptable LoadedLevel;
+        [HideInInspector] public Color Color;
+        [HideInInspector] public List<GameObject> InstantiatedObjects = new List<GameObject>();
         #endregion
+
+        private void Update()
+        {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 30;
+        }
     }
 }
