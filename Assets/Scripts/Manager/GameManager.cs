@@ -52,7 +52,6 @@ namespace Picker3D.Manager
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = gameManagerData.FpsRate;
-            Debug.Log(TotalCoins.ToString());
         }
 
         private void SetSkybox()
