@@ -18,6 +18,9 @@ namespace Picker3D.Picker{
         private Vector3 targetPosition = Vector3.zero;
         private Vector2 firstTouchPosition;
         private Vector2 secondTouchPosition;
+
+        // Collision
+        private bool triggered = false;
         #endregion
 
         private void Awake()
@@ -125,17 +128,20 @@ namespace Picker3D.Picker{
         {
             if (other.gameObject.tag.Equals("EndSection"))
             {
+                Destroy(other.gameObject, 0f);
                 Playable = false;
-                Destroy(other.gameObject,0f);
-                
             }
             else if (other.gameObject.tag.Equals("LevelFinish"))
             {
-                Playable = false;
-                UIManager.Instance.EndScreen(0, GameManager.Instance.TotalCoins);
-                var level = PlayerPrefs.GetInt("Level");
-                PlayerPrefs.SetInt("Level", level + 1);
-                Destroy(other.gameObject, 0f);
+                if (!triggered)
+                {
+                    Destroy(other.gameObject, 0f);
+                    Playable = false;
+                    UIManager.Instance.EndScreen(0, GameManager.Instance.TotalCoins);
+                    var level = PlayerPrefs.GetInt("Level");
+                    PlayerPrefs.SetInt("Level", level + 1);
+                    triggered = true;
+                }
             }
         }
     }
