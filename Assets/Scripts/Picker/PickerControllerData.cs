@@ -7,8 +7,8 @@ namespace Picker3D.Picker
     [CreateAssetMenu(menuName = "Picker Controller", fileName = "Picker Controller Data")]
     public class PickerControllerData : ScriptableObject
     {
-        [SerializeField] private float verticalSpeed;
-        public float VerticalSpeed { get { return verticalSpeed; } }
+        [SerializeField] private float speed;
+        public float Speed { get { return speed; } }
 
         private float minHorizontal = -8f;
         public float MinHorizontal { get { return minHorizontal; } }

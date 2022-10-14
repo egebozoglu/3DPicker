@@ -25,7 +25,6 @@ namespace Picker3D.Picker{
 
         private void Awake()
         {
-            Application.targetFrameRate = 30;
             if (Instance == null)
             {
                 Instance = this;
@@ -47,7 +46,7 @@ namespace Picker3D.Picker{
         {
             if (targetPosition != Vector3.zero)
             {
-                rb.MovePosition(Vector3.Lerp(transform.position, targetPosition, pickerControllerData.VerticalSpeed * Time.deltaTime));
+                rb.MovePosition(Vector3.Lerp(transform.position, targetPosition, pickerControllerData.Speed * Time.deltaTime));
             }
 
             // Check Border
@@ -128,6 +127,7 @@ namespace Picker3D.Picker{
         {
             if (other.gameObject.tag.Equals("EndSection"))
             {
+                StartCoroutine(other.gameObject.transform.parent.GetComponent<CollectibleRequiredController>().CollectingCheck());
                 Destroy(other.gameObject, 0f);
                 Playable = false;
             }

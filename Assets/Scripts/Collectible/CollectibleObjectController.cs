@@ -20,7 +20,6 @@ namespace Picker3D.Collectible
                 collected = true;
                 var requiredController = collision.transform.GetComponent<CollectibleRequiredController>();
                 requiredController.CollectedCount++;
-                requiredController.CollectingStarted = true;
                 Destroy(gameObject, 2f);
             }
         }

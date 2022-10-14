@@ -19,6 +19,7 @@ namespace Picker3D.Manager
 
         [Header("Game Mechanics")]
         public int TotalCoins = 0;
+        [SerializeField] private GameManagerData gameManagerData;
         #endregion
 
         private void Awake()
@@ -49,7 +50,9 @@ namespace Picker3D.Manager
         // Update is called once per frame
         void Update()
         {
-
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = gameManagerData.FpsRate;
+            Debug.Log(TotalCoins.ToString());
         }
 
         private void SetSkybox()
