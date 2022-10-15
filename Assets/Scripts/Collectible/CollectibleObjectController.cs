@@ -10,6 +10,7 @@ namespace Picker3D.Collectible
         #region Variables
         [SerializeField] private AudioSource audioSource;
         private bool collected = false;
+        private bool firstCollision = true;
         #endregion
 
         private void Update()
@@ -22,7 +23,11 @@ namespace Picker3D.Collectible
 
         private void OnCollisionEnter(Collision collision)
         {
-            audioSource.Play();
+            if (!firstCollision)
+            {
+                audioSource.Play();
+            }
+            
             if (collision.gameObject.tag.Equals("CollectibleRequired") && !collected)
             {
                 collected = true;
@@ -30,6 +35,8 @@ namespace Picker3D.Collectible
                 requiredController.CollectedCount++;
                 Destroy(gameObject, 2f);
             }
+
+            firstCollision = false;
         }
     }
 }
