@@ -9,8 +9,12 @@ namespace Picker3D.Collectible
     {
         #region Variables
         [SerializeField] private AudioSource audioSource;
+        [SerializeField] private Rigidbody rb;
         private bool collected = false;
         private bool firstCollision = true;
+        private string triggerTag = "InsideTrigger";
+        private float insideDrag = 5;
+        private float outsideDrag = 0.5f;
         #endregion
 
         private void Update()
@@ -37,6 +41,23 @@ namespace Picker3D.Collectible
             }
 
             firstCollision = false;
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.tag.Equals(triggerTag))
+            {
+                rb.drag = insideDrag;
+                Debug.Log(rb.drag.ToString());
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.tag.Equals(triggerTag))
+            {
+                rb.drag = outsideDrag;
+            }
         }
     }
 }
