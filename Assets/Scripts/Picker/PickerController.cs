@@ -157,6 +157,8 @@ namespace Picker3D.Picker{
                     UIManager.Instance.EndScreen(0, GameManager.Instance.TotalCoins);
                     var level = PlayerPrefs.GetInt("Level");
                     PlayerPrefs.SetInt("Level", level + 1);
+                    var coins = PlayerPrefs.GetInt("CoinAmount");
+                    PlayerPrefs.SetInt("CoinAmount", coins + GameManager.Instance.TotalCoins);
                     triggered = true;
                 }
             }
