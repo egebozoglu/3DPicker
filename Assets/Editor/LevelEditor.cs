@@ -307,6 +307,10 @@ namespace Picker3D.EditorScene {
                 levelObjects.Add(levelObject);
             }
 
+            levelScriptable.ObjectNames.Clear();
+            levelScriptable.ObjectPositions.Clear();
+            levelScriptable.ObjectsRotations.Clear();
+
             foreach (LevelObject levelObject in levelObjects)
             {
                 levelScriptable.ObjectNames.Add(levelObject.ObjectName);
