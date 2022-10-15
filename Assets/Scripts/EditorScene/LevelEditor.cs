@@ -107,9 +107,9 @@ namespace Picker3D.EditorScene {
                 instantiatedObject.transform.position = levelObject.Position;
                 instantiatedObject.transform.rotation = levelObject.Rotation;
             }
-            firstComplete = levelScriptable.Complete1.ToString();
-            secondComplete = levelScriptable.Complete2.ToString();
-            thirdComplete = levelScriptable.Complete3.ToString();
+            firstComplete = levelScriptable.CompleteCounts[0].ToString();
+            secondComplete = levelScriptable.CompleteCounts[1].ToString();
+            thirdComplete = levelScriptable.CompleteCounts[2].ToString();
 
             // set platform color
             manager.Color = levelScriptable.PlatformColor;
@@ -282,9 +282,11 @@ namespace Picker3D.EditorScene {
         {
             levelScriptable.PlatformColor = manager.Color;
             levelScriptable.AllObjects = CreateLevelObjectList();
-            levelScriptable.Complete1 = int.Parse(firstComplete);
-            levelScriptable.Complete2 = int.Parse(secondComplete);
-            levelScriptable.Complete3 = int.Parse(thirdComplete);
+            List<int> completeList = new List<int>();
+            completeList.Add(int.Parse(firstComplete));
+            completeList.Add(int.Parse(secondComplete));
+            completeList.Add(int.Parse(thirdComplete));
+            levelScriptable.CompleteCounts = completeList;
         }
 
         private List<LevelObject> CreateLevelObjectList()
