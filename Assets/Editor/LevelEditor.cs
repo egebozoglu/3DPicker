@@ -16,9 +16,9 @@ namespace Picker3D.EditorScene {
         private List<LevelScriptable> levelScriptables = new List<LevelScriptable>();
 
         // Complete Counts
-        private string firstComplete = "0";
-        private string secondComplete = "0";
-        private string thirdComplete = "0";
+        private string firstComplete;
+        private string secondComplete;
+        private string thirdComplete;
 
         // Levels Path
         private int levelIndex = 0;
@@ -31,6 +31,7 @@ namespace Picker3D.EditorScene {
 
             manager = (LevelEditorManager)target;
 
+            GUIGenerateRandomLevel();
             GUINewLevel();
             GUILoadLevel();
             GUIGeneratePlatformColor();
@@ -42,23 +43,42 @@ namespace Picker3D.EditorScene {
 
         #region GUI Functions
 
+        private void GUIGenerateRandomLevel()
+        {
+            GUILine();
+
+            GUILayout.Label("Generate Random Level", EditorStyles.boldLabel);
+
+            if (GUILayout.Button("Generate Level"))
+            {
+                // clear the existing level
+                NewLevel();
+                // generating codes here
+            }
+        }
+
         private void GUINewLevel()
         {
             GUILine();
 
             GUILayout.Label("New Level", EditorStyles.boldLabel);
 
-            if (GUILayout.Button("New Level"))
+            if (GUILayout.Button("New Blank Level"))
             {
-                // destroy existing objects
-                foreach (GameObject item in manager.InstantiatedObjects)
-                {
-                    DestroyImmediate(item);
-                }
-                manager.InstantiatedObjects.Clear();
-                manager.LoadedLevel = null;
-                manager.Color = Random.ColorHSV();
+                NewLevel();
             }
+        }
+
+        private void NewLevel()
+        {
+            // destroy existing objects
+            foreach (GameObject item in manager.InstantiatedObjects)
+            {
+                DestroyImmediate(item);
+            }
+            manager.InstantiatedObjects.Clear();
+            manager.LoadedLevel = null;
+            manager.Color = Random.ColorHSV();
         }
         private void GUILoadLevel()
         {
@@ -265,6 +285,8 @@ namespace Picker3D.EditorScene {
                         DestroyImmediate(item);
                     }
                     manager.InstantiatedObjects.Clear();
+
+                    savingError = string.Empty;
                 }
                 else
                 {
