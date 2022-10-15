@@ -113,6 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 494743841}
   rb: {fileID: -8897866704834333184}
+  particlePrefab: {fileID: 2222749180055025791, guid: ef5dc1a57cda1ed4597356dc20b54a84,
+    type: 3}
 --- !u!54 &-8897866704834333184
 Rigidbody:
   m_ObjectHideFlags: 0

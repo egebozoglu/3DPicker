@@ -10,6 +10,8 @@ namespace Picker3D.Collectible
         #region Variables
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private Rigidbody rb;
+        [SerializeField] private GameObject particlePrefab;
+        private int particleCount = 3;
         private bool collected = false;
         private bool firstCollision = true;
         private string triggerTag = "InsideTrigger";
@@ -34,6 +36,7 @@ namespace Picker3D.Collectible
             
             if (collision.gameObject.tag.Equals("CollectibleRequired") && !collected)
             {
+                StartCoroutine(InstantiateParticle());
                 collected = true;
                 var requiredController = collision.transform.GetComponent<CollectibleRequiredController>();
                 requiredController.CollectedCount++;
@@ -41,6 +44,23 @@ namespace Picker3D.Collectible
             }
 
             firstCollision = false;
+        }
+
+        private IEnumerator InstantiateParticle()
+        {
+            yield return new WaitForSeconds(1.8f);
+
+            for (int i = 0; i < particleCount; i++)
+            {
+                GameObject particle;
+                particle = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+
+                Renderer renderer = particle.GetComponent<Renderer>();
+                if (renderer!=null)
+                {
+                    renderer.material.color = Random.ColorHSV();
+                }
+            }
         }
 
         private void OnTriggerStay(Collider other)
