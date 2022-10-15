@@ -8,14 +8,17 @@ namespace Picker3D.Platform
     {
         #region Variables
         [HideInInspector] public Color ItemsColor;
+        [HideInInspector] public List<int> CompleteCounts;
         [Header("Platform Items")]
         [SerializeField] private List<GameObject> itemsToColorize;
+        [SerializeField] private List<TextMesh> completeTextMeshes;
         #endregion
 
         // Start is called before the first frame update
         void Start()
         {
             ColorizeItems();
+            SetCompleteTexts();
         }
 
         private void ColorizeItems()
@@ -28,6 +31,14 @@ namespace Picker3D.Platform
                 {
                     renderer.sharedMaterial.color = ItemsColor;
                 }
+            }
+        }
+
+        private void SetCompleteTexts()
+        {
+            for (int i = 0; i < completeTextMeshes.Count; i++)
+            {
+                completeTextMeshes[i].text = "0/" + CompleteCounts[i].ToString();
             }
         }
     }
