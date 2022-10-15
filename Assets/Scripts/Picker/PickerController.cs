@@ -116,11 +116,11 @@ namespace Picker3D.Picker{
 
             if (Playable)
             {
-                targetPosition = transform.position + Vector3.forward + (Vector3.right * rightMove);
+                targetPosition = transform.position + Vector3.forward + (Vector3.right * rightMove * pickerControllerData.HorizontalCoef);
             }
             else
             {
-                targetPosition = transform.position + (Vector3.right * rightMove);
+                targetPosition = transform.position + (Vector3.right * rightMove * pickerControllerData.HorizontalCoef);
             }
         }
         #endregion

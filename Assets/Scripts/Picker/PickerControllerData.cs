@@ -10,6 +10,9 @@ namespace Picker3D.Picker
         [SerializeField] private float speed;
         public float Speed { get { return speed; } }
 
+        [SerializeField] private float horizontalCoef;
+        public float HorizontalCoef { get { return horizontalCoef; } }
+
         private float minHorizontal = -8f;
         public float MinHorizontal { get { return minHorizontal; } }
 
