@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PickerControllerData
   m_EditorClassIdentifier: 
   speed: 30
+  horizontalCoef: 0.5
