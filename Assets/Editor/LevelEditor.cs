@@ -10,6 +10,14 @@ namespace Picker3D.EditorScene {
         #region Variables
         LevelEditorManager manager;
 
+        // Random Generate Level
+        private string randomFirstPhase = "0";
+        private string randomSecondPhase = "0";
+        private string randomThirdPhase = "0";
+        private float randomPositionX; // between -8 and 8
+        private float randomPositionY = 0.5f;
+        private float randomPositionZ; // depends on phase => firstPhase between 25 and 75 , secondPhase between 130 and 215 , thirdPhase between 270 and 355
+
         // Level
         private string savingError = string.Empty;
         private List<LevelScriptable> levelScriptables = new List<LevelScriptable>();
@@ -48,11 +56,65 @@ namespace Picker3D.EditorScene {
 
             GUILayout.Label("Generate Random Level", EditorStyles.boldLabel);
 
+            GUILayout.Space(10);
+            GUILayout.Label("Object counts for each phase", EditorStyles.label);
+
+            GUILayout.BeginHorizontal();
+
+            GUILayout.Label("Phase 1- ");
+            randomFirstPhase = EditorGUILayout.TextField(randomFirstPhase);
+            GUILayout.Label("Phase 2- ");
+            randomSecondPhase = EditorGUILayout.TextField(randomSecondPhase);
+            GUILayout.Label("Phase 3- ");
+            randomThirdPhase = EditorGUILayout.TextField(randomThirdPhase);
+
+            GUILayout.EndHorizontal();
+
+
             if (GUILayout.Button("Generate Level"))
             {
                 // clear the existing level
                 NewLevel();
-                // generating codes here
+                // generate objects randomly
+                GeneratingRandomObjects();
+            }
+        }
+
+        private void GeneratingRandomObjects()
+        {
+            InstantiateRandomObjects(randomFirstPhase, 25, 76);
+            InstantiateRandomObjects(randomSecondPhase, 130, 215);
+            InstantiateRandomObjects(randomThirdPhase, 270, 355);
+        }
+
+        private void InstantiateRandomObjects(string randomPhase, int minRandomZ, int maxRandomZ)
+        {
+            System.Random rand = new System.Random();
+            if (CheckRandomPhaseCounts(randomPhase))
+            {
+                for (int i = 0; i < int.Parse(randomPhase); i++)
+                {
+                    randomPositionX = rand.Next(-8, 9);
+                    randomPositionZ = rand.Next(minRandomZ, maxRandomZ);
+                    Vector3 position = new Vector3(randomPositionX, randomPositionY, randomPositionZ);
+
+                    GameObject randomObject;
+                    randomObject = Instantiate(manager.ObjectPrefabs[rand.Next(manager.ObjectPrefabs.Count)], position, Quaternion.identity);
+                    manager.InstantiatedObjects.Add(randomObject);
+                }
+            }
+        }
+
+        private bool CheckRandomPhaseCounts(string randomPhase)
+        {
+            bool isNumeric = int.TryParse(randomPhase, out _);
+            if (randomPhase != "0" && isNumeric)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -77,7 +139,6 @@ namespace Picker3D.EditorScene {
             }
             manager.InstantiatedObjects.Clear();
             manager.LoadedLevel = null;
-            manager.Color = Random.ColorHSV();
         }
         private void GUILoadLevel()
         {
@@ -215,11 +276,11 @@ namespace Picker3D.EditorScene {
 
             GUILayout.BeginHorizontal();
 
-            GUILayout.Label("Phase 1- ");
+            GUILayout.Label("Complete 1- ");
             firstComplete = EditorGUILayout.TextField(firstComplete);
-            GUILayout.Label("Phase 2- ");
+            GUILayout.Label("Complete 2- ");
             secondComplete = EditorGUILayout.TextField(secondComplete);
-            GUILayout.Label("Phase 3- ");
+            GUILayout.Label("Complete 3- ");
             thirdComplete = EditorGUILayout.TextField(thirdComplete);
 
             manager.FirstCompleteText.text = "0/" + firstComplete;
