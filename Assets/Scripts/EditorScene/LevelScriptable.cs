@@ -9,7 +9,9 @@ namespace Picker3D.EditorScene
     {
         [SerializeField] public int Level;
         [SerializeField] public Color PlatformColor;
-        [SerializeField] public List<LevelObject> AllObjects = new List<LevelObject>();
+        [SerializeField] public List<string> ObjectNames = new List<string>();
+        [SerializeField] public List<Vector3> ObjectPositions = new List<Vector3>();
+        [SerializeField] public List<Quaternion> ObjectsRotations = new List<Quaternion>();
         [SerializeField] public List<int> CompleteCounts = new List<int>();
     }
 }

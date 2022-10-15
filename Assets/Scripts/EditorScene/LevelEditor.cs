@@ -100,12 +100,11 @@ namespace Picker3D.EditorScene {
             manager.InstantiatedObjects.Clear();
 
             // create selected level objects
-            for (int i = 0; i < levelScriptable.AllObjects.Count; i++)
+            for (int i = 0; i < levelScriptable.ObjectNames.Count; i++)
             {
-                var levelObject = levelScriptable.AllObjects[i];
-                GameObject instantiatedObject= InstantiateObject(levelObject.ObjectName);
-                instantiatedObject.transform.position = levelObject.Position;
-                instantiatedObject.transform.rotation = levelObject.Rotation;
+                GameObject instantiatedObject= InstantiateObject(levelScriptable.ObjectNames[i]);
+                instantiatedObject.transform.position = levelScriptable.ObjectPositions[i];
+                instantiatedObject.transform.rotation = levelScriptable.ObjectsRotations[i];
             }
             firstComplete = levelScriptable.CompleteCounts[0].ToString();
             secondComplete = levelScriptable.CompleteCounts[1].ToString();
@@ -281,7 +280,7 @@ namespace Picker3D.EditorScene {
         private void SetLevelData(LevelScriptable levelScriptable)
         {
             levelScriptable.PlatformColor = manager.Color;
-            levelScriptable.AllObjects = CreateLevelObjectList();
+            CreateLevelObjectList(levelScriptable);
             List<int> completeList = new List<int>();
             completeList.Add(int.Parse(firstComplete));
             completeList.Add(int.Parse(secondComplete));
@@ -289,7 +288,7 @@ namespace Picker3D.EditorScene {
             levelScriptable.CompleteCounts = completeList;
         }
 
-        private List<LevelObject> CreateLevelObjectList()
+        private void CreateLevelObjectList(LevelScriptable levelScriptable)
         {
             List<LevelObject> levelObjects = new List<LevelObject>();
 
@@ -308,7 +307,12 @@ namespace Picker3D.EditorScene {
                 levelObjects.Add(levelObject);
             }
 
-            return levelObjects;
+            foreach (LevelObject levelObject in levelObjects)
+            {
+                levelScriptable.ObjectNames.Add(levelObject.ObjectName);
+                levelScriptable.ObjectPositions.Add(levelObject.Position);
+                levelScriptable.ObjectsRotations.Add(levelObject.Rotation);
+            }
         }
 
         private void GUILine()

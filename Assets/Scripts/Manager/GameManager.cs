@@ -93,9 +93,6 @@ namespace Picker3D.Manager
             {
                 levelScriptable = levelScriptables.Where(x => x.name == "Level" + level.ToString()).FirstOrDefault();
             }
-            Debug.Log(levelScriptable.AllObjects.Count.ToString());
-            Debug.Log(levelScriptable.CompleteCounts.Count.ToString());
-            Debug.Log(levelScriptable.PlatformColor);
         }
 
         private void InstantiatePlatform()
@@ -119,17 +116,19 @@ namespace Picker3D.Manager
 
         private void InstantiateCollectibles()
         {
-            foreach (LevelObject levelObject in levelScriptable.AllObjects)
+            for (int i = 0; i < levelScriptable.ObjectNames.Count; i++)
             {
                 GameObject prefab = collectibleObjectPrefabs[0];
-                for (int i = 0; i < collectibleObjectPrefabs.Count; i++)
+
+                for (int j = 0; j < collectibleObjectPrefabs.Count; j++)
                 {
-                    if (levelObject.ObjectName == collectibleObjectPrefabs[i].name)
+                    if (levelScriptable.ObjectNames[i] == collectibleObjectPrefabs[j].name)
                     {
-                        prefab = collectibleObjectPrefabs[i];
+                        prefab = collectibleObjectPrefabs[j];
                     }
                 }
-                Instantiate(prefab, levelObject.Position, levelObject.Rotation);
+
+                Instantiate(prefab, levelScriptable.ObjectPositions[i], levelScriptable.ObjectsRotations[i]);
             }
         }
     }
