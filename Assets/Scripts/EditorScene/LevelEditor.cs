@@ -103,7 +103,7 @@ namespace Picker3D.EditorScene {
             for (int i = 0; i < levelScriptable.AllObjects.Count; i++)
             {
                 var levelObject = levelScriptable.AllObjects[i];
-                GameObject instantiatedObject= InstantiateObject(levelObject.ObjectPrefab);
+                GameObject instantiatedObject= InstantiateObject(levelObject.ObjectName);
                 instantiatedObject.transform.position = levelObject.Position;
                 instantiatedObject.transform.rotation = levelObject.Rotation;
             }
@@ -163,7 +163,7 @@ namespace Picker3D.EditorScene {
             {
                 if (GUILayout.Button(manager.ObjectPrefabs[i].name))
                 {
-                    InstantiateObject(manager.ObjectPrefabs[i]);
+                    InstantiateObject(manager.ObjectPrefabs[i].name);
                 }
             }
         }
@@ -243,7 +243,6 @@ namespace Picker3D.EditorScene {
                         SetLevelData(levelScriptable);
 
                         EditorUtility.SetDirty(levelScriptable);
-
                         AssetDatabase.SaveAssets();
                     }
                     else
@@ -256,6 +255,7 @@ namespace Picker3D.EditorScene {
                         string fileName = levelPathToSave + levelScriptable.Level.ToString() +".asset";
 
                         AssetDatabase.CreateAsset(levelScriptable, fileName);
+                        EditorUtility.SetDirty(levelScriptable);
                         AssetDatabase.SaveAssets();
                     }
 
@@ -300,7 +300,7 @@ namespace Picker3D.EditorScene {
                 {
                     if (instantiatedObject.name.Contains(manager.ObjectPrefabs[i].name))
                     {
-                        levelObject.ObjectPrefab = manager.ObjectPrefabs[i];
+                        levelObject.ObjectName = manager.ObjectPrefabs[i].name;
                     }
                 }
                 levelObject.Position = instantiatedObject.transform.position;
@@ -325,8 +325,16 @@ namespace Picker3D.EditorScene {
         }
         #endregion
 
-        private GameObject InstantiateObject(GameObject prefab)
+        private GameObject InstantiateObject(string prefabName)
         {
+            GameObject prefab = manager.ObjectPrefabs[0];
+            for (int i = 0; i < manager.ObjectPrefabs.Count; i++)
+            {
+                if (manager.ObjectPrefabs[i].name.Contains(prefabName))
+                {
+                    prefab = manager.ObjectPrefabs[i];
+                }
+            }
             GameObject prefabObject;
 
             Vector3 lastPosition;

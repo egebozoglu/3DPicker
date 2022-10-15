@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 namespace Picker3D.EditorScene
 {
+    [Serializable]
     public class LevelScriptable : ScriptableObject
     {
-        public int Level;
-        public Color PlatformColor;
-        public List<LevelObject> AllObjects = new List<LevelObject>();
-        public List<int> CompleteCounts = new List<int>();
+        [SerializeField] public int Level;
+        [SerializeField] public Color PlatformColor;
+        [SerializeField] public List<LevelObject> AllObjects = new List<LevelObject>();
+        [SerializeField] public List<int> CompleteCounts = new List<int>();
     }
 }

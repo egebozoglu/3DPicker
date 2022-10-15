@@ -1135,6 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemsColor: {r: 0, g: 0, b: 0, a: 0}
+  CompleteCounts: 
   itemsToColorize:
   - {fileID: 2612354660250962284}
   - {fileID: 2612354658478743255}
@@ -1143,6 +1144,10 @@ MonoBehaviour:
   - {fileID: 2612354659360686585}
   - {fileID: 2612354659651934117}
   - {fileID: 1261517061}
+  completeRequired:
+  - {fileID: 2612354659728393779}
+  - {fileID: 2612354659360686585}
+  - {fileID: 2612354659651934117}
 --- !u!1 &2612354658478743255
 GameObject:
   m_ObjectHideFlags: 0

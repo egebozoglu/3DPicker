@@ -9,8 +9,8 @@ namespace Picker3D.CollectibleRequired
     public class CollectibleRequiredController : MonoBehaviour
     {
         #region Variables
-        public int RequiredCollectibleCount;
-        public int CollectedCount;
+        [HideInInspector] public int RequiredCollectibleCount;
+        [HideInInspector] public int CollectedCount;
         private bool collected = false;
         private int lerpTime = 10;
         private int requiredIndex;

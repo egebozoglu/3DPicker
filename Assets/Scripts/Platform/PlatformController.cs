@@ -1,3 +1,4 @@
+using Picker3D.CollectibleRequired;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,10 @@ namespace Picker3D.Platform
         [HideInInspector] public List<int> CompleteCounts;
         [Header("Platform Items")]
         [SerializeField] private List<GameObject> itemsToColorize;
-        [SerializeField] private List<TextMesh> completeTextMeshes;
+        [SerializeField] private List<GameObject> completeRequired;
         #endregion
 
-        // Start is called before the first frame update
-        void Start()
+        public void PlatformSettings()
         {
             ColorizeItems();
             SetCompleteTexts();
@@ -29,16 +29,16 @@ namespace Picker3D.Platform
 
                 if (renderer != null)
                 {
-                    renderer.sharedMaterial.color = ItemsColor;
+                    renderer.material.color = ItemsColor;
                 }
             }
         }
 
         private void SetCompleteTexts()
         {
-            for (int i = 0; i < completeTextMeshes.Count; i++)
+            for (int i = 0; i < completeRequired.Count; i++)
             {
-                completeTextMeshes[i].text = "0/" + CompleteCounts[i].ToString();
+                completeRequired[i].GetComponent<CollectibleRequiredController>().RequiredCollectibleCount = CompleteCounts[i];
             }
         }
     }
