@@ -13,6 +13,8 @@ namespace Picker3D.Picker{
         [Header("Movement")]
         [SerializeField] private Rigidbody rb;
         [SerializeField] private PickerControllerData pickerControllerData;
+        [SerializeField] private BoxCollider insideTrigger;
+        private Vector3 triggerSize;
         public bool Playable = false;
         private bool initialPlayable = true;
         private Vector3 targetPosition = Vector3.zero;
@@ -33,6 +35,8 @@ namespace Picker3D.Picker{
             {
                 Destroy(gameObject);
             }
+
+            triggerSize = insideTrigger.size;
         }
 
         // Update is called once per frame
@@ -40,6 +44,17 @@ namespace Picker3D.Picker{
         {
             TouchInputHorizontal();
             Movement();
+
+            // inside trigger activating
+            insideTrigger.size = Vector3.zero;
+            if (Playable)
+            {
+                insideTrigger.size = triggerSize;
+            }
+            else
+            {
+                insideTrigger.size = Vector3.zero;
+            }
         }
 
         #region Movement
