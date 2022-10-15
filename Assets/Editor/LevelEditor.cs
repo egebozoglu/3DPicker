@@ -82,24 +82,32 @@ namespace Picker3D.EditorScene {
 
         private void GeneratingRandomObjects()
         {
-            InstantiateRandomObjects(randomFirstPhase, 25, 76);
-            InstantiateRandomObjects(randomSecondPhase, 130, 215);
-            InstantiateRandomObjects(randomThirdPhase, 270, 355);
+            System.Random rand = new System.Random();
+            InstantiateRandomObjects(randomFirstPhase, 25, 75, manager.ObjectPrefabs[rand.Next(manager.ObjectPrefabs.Count)]);
+            InstantiateRandomObjects(randomSecondPhase, 130, 215, manager.ObjectPrefabs[rand.Next(manager.ObjectPrefabs.Count)]);
+            InstantiateRandomObjects(randomThirdPhase, 270, 355, manager.ObjectPrefabs[rand.Next(manager.ObjectPrefabs.Count)]);
         }
 
-        private void InstantiateRandomObjects(string randomPhase, int minRandomZ, int maxRandomZ)
+        private void InstantiateRandomObjects(string randomPhase, int minRandomZ, int maxRandomZ, GameObject randomPrefab)
         {
             System.Random rand = new System.Random();
             if (CheckRandomPhaseCounts(randomPhase))
             {
                 for (int i = 0; i < int.Parse(randomPhase); i++)
                 {
+                    
                     randomPositionX = rand.Next(-8, 9);
-                    randomPositionZ = rand.Next(minRandomZ, maxRandomZ);
-                    Vector3 position = new Vector3(randomPositionX, randomPositionY, randomPositionZ);
+                    if (randomPositionX % 2 != 0)
+                    {
+                        randomPositionX += 2 - (randomPositionX % 2);
+                        randomPositionX *= rand.Next(-1, 2);
+                    }
+                    var step = (i * 5) % (maxRandomZ - minRandomZ);
+                    var randomZ = minRandomZ + step;
+                    Vector3 position = new Vector3(randomPositionX, randomPositionY, randomZ);
 
                     GameObject randomObject;
-                    randomObject = Instantiate(manager.ObjectPrefabs[rand.Next(manager.ObjectPrefabs.Count)], position, Quaternion.identity);
+                    randomObject = Instantiate(randomPrefab, position, Quaternion.identity);
                     manager.InstantiatedObjects.Add(randomObject);
                 }
             }
