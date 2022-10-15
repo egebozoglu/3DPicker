@@ -12,6 +12,14 @@ namespace Picker3D.Collectible
         private bool collected = false;
         #endregion
 
+        private void Update()
+        {
+            if (transform.position.y<=-5)
+            {
+                Destroy(gameObject, 0f);
+            }
+        }
+
         private void OnCollisionEnter(Collision collision)
         {
             audioSource.Play();
