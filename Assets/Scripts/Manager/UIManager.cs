@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Picker3D.Manager
 {
@@ -24,6 +25,9 @@ namespace Picker3D.Manager
         [Header("End Screen Variables")]
         [SerializeField] private List<GameObject> endScreens = new List<GameObject>();
         [SerializeField] private TextMeshProUGUI endCoinText; // level end coin amount
+
+        // level
+        private int level;
         #endregion
 
         private void Awake()
@@ -41,7 +45,7 @@ namespace Picker3D.Manager
         private void Start()
         {
             // set level texts
-            var level = PlayerPrefs.GetInt("Level");
+            level = PlayerPrefs.GetInt("Level");
             currentLevel.text = level.ToString();
             nextLevel.text = (level + 1).ToString();
         }
@@ -89,5 +93,17 @@ namespace Picker3D.Manager
             // change indicator color
             indicators[index].color = indicatorColor;
         }
+
+        #region End Button Function
+        public void EndButtonClicks(Button button)
+        {
+            if (button.name.Contains("Next"))
+            {
+                PlayerPrefs.SetInt("Level", level + 1);
+            }
+
+            SceneManager.LoadScene("GameScene");
+        }
+        #endregion
     }
 }
