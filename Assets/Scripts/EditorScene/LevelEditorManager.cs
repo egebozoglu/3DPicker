@@ -1,3 +1,4 @@
+using Picker3D.Manager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,9 @@ namespace Picker3D.EditorScene
     public class LevelEditorManager : MonoBehaviour
     {
         #region Variables
+        [Header("FPS Data")]
+        [SerializeField] private GameManagerData gameManagerData;
+
         [Header("Prefabs")]
         public List<GameObject> ObjectPrefabs = new List<GameObject>();
         public List<GameObject> PlatformObjectsToColorized;
@@ -28,7 +32,7 @@ namespace Picker3D.EditorScene
         private void Update()
         {
             QualitySettings.vSyncCount = 0;
-            Application.targetFrameRate = 30;
+            Application.targetFrameRate = gameManagerData.FpsRate;
         }
     }
 }
