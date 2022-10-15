@@ -11,7 +11,6 @@ namespace Picker3D.EditorScene {
         LevelEditorManager manager;
 
         // Level
-        private string currentLevelName;
         private string savingError = string.Empty;
         private List<LevelScriptable> levelScriptables = new List<LevelScriptable>();
 
