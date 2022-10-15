@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9469ccf52649d4f8773704400bd233, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  Level: 2
+  PlatformColor: {r: 0.49482933, g: 0.42772907, b: 0.5001953, a: 1}
+  ObjectNames:
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  ObjectPositions:
+  - {x: 6, y: 0.5, z: 25}
+  - {x: 0, y: 0.5, z: 30}
+  - {x: -6, y: 0.5, z: 35}
+  - {x: 0, y: 0.5, z: 40}
+  - {x: 2, y: 0.5, z: 45}
+  - {x: 2, y: 0.5, z: 50}
+  - {x: 0, y: 0.5, z: 55}
+  - {x: 2, y: 0.5, z: 60}
+  - {x: -0, y: 0.5, z: 65}
+  - {x: -0, y: 0.5, z: 70}
+  - {x: 6, y: 0.5, z: 130}
+  - {x: 0, y: 0.5, z: 135}
+  - {x: -6, y: 0.5, z: 140}
+  - {x: 0, y: 0.5, z: 145}
+  - {x: 2, y: 0.5, z: 150}
+  - {x: 2, y: 0.5, z: 155}
+  - {x: 0, y: 0.5, z: 160}
+  - {x: 2, y: 0.5, z: 165}
+  - {x: -0, y: 0.5, z: 170}
+  - {x: -0, y: 0.5, z: 175}
+  - {x: -2, y: 0.5, z: 180}
+  - {x: -6, y: 0.5, z: 185}
+  - {x: 6, y: 0.5, z: 270}
+  - {x: 0, y: 0.5, z: 275}
+  - {x: -6, y: 0.5, z: 280}
+  - {x: 0, y: 0.5, z: 285}
+  - {x: 2, y: 0.5, z: 290}
+  - {x: 2, y: 0.5, z: 295}
+  - {x: 0, y: 0.5, z: 300}
+  - {x: 2, y: 0.5, z: 305}
+  - {x: -0, y: 0.5, z: 310}
+  - {x: -0, y: 0.5, z: 315}
+  - {x: -2, y: 0.5, z: 320}
+  - {x: -6, y: 0.5, z: 325}
+  - {x: 8, y: 0.5, z: 330}
+  - {x: 0, y: 0.5, z: 335}
+  - {x: 0, y: 0.5, z: 340}
+  ObjectsRotations:
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  CompleteCounts: 050000000700000008000000
