@@ -48,7 +48,6 @@ namespace Picker3D.Collectible
             if (other.gameObject.tag.Equals(triggerTag))
             {
                 rb.drag = insideDrag;
-                Debug.Log(rb.drag.ToString());
             }
         }
 
