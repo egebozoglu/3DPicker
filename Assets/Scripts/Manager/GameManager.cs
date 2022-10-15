@@ -87,7 +87,7 @@ namespace Picker3D.Manager
             if (level > levelScriptables.Count)
             {
                 System.Random rand = new System.Random();
-                levelScriptable = levelScriptables[rand.Next(levelScriptables.Count)];
+                levelScriptable = levelScriptables[rand.Next(0,levelScriptables.Count)];
             }
             else
             {
