@@ -15,8 +15,9 @@ namespace Picker3D.Collectible
         private bool collected = false;
         private bool firstCollision = true;
         private string triggerTag = "InsideTrigger";
-        private float insideDrag = 5;
+        private float insideDrag = 10;
         private float outsideDrag = 0.5f;
+        private float mass = 5000;
         #endregion
 
         private void Update()
@@ -76,6 +77,7 @@ namespace Picker3D.Collectible
             if (other.gameObject.tag.Equals(triggerTag))
             {
                 rb.drag = outsideDrag;
+                rb.mass = mass;
             }
         }
     }

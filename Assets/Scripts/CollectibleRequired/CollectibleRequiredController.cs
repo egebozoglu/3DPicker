@@ -72,7 +72,7 @@ namespace Picker3D.CollectibleRequired
                 {
                     collected = true;
                     SoundManager.Instance.PlaySuccessClip(1);
-                    UIManager.Instance.EndScreen(1, 0);
+                    StartCoroutine(UIManager.Instance.EndScreen(1, 0));
                 }
 
             }
