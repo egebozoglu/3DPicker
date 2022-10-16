@@ -135,6 +135,7 @@ namespace Picker3D.EditorScene {
             if (GUILayout.Button("New Blank Level"))
             {
                 NewLevel();
+                manager.LoadedLevel = null;
             }
         }
 
@@ -146,7 +147,6 @@ namespace Picker3D.EditorScene {
                 DestroyImmediate(item);
             }
             manager.InstantiatedObjects.Clear();
-            manager.LoadedLevel = null;
         }
         private void GUILoadLevel()
         {

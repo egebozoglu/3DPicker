@@ -15,6 +15,75 @@ MonoBehaviour:
   Level: 11
   PlatformColor: {r: 0.04309777, g: 0.10689606, b: 0.06521714, a: 1}
   ObjectNames:
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - CapsuleObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
+  - SphereObject
   - SphereObject
   - SphereObject
   - SphereObject
@@ -55,108 +124,264 @@ MonoBehaviour:
   - CubeObject
   - CubeObject
   - CubeObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
-  - SphereObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
+  - CubeObject
   ObjectPositions:
-  - {x: 0, y: 0.5, z: 25}
-  - {x: 6, y: 0.5, z: 30}
+  - {x: -4, y: 0.5, z: 25}
+  - {x: -4, y: 0.5, z: 30}
+  - {x: -0, y: 0.5, z: 35}
+  - {x: 8, y: 0.5, z: 40}
+  - {x: 4, y: 0.5, z: 45}
+  - {x: 0, y: 0.5, z: 50}
+  - {x: 4, y: 0.5, z: 55}
+  - {x: 0, y: 0.5, z: 60}
+  - {x: 8, y: 0.5, z: 65}
+  - {x: 8, y: 0.5, z: 70}
+  - {x: -2, y: 0.5, z: 25}
+  - {x: 8, y: 0.5, z: 30}
   - {x: 0, y: 0.5, z: 35}
   - {x: 2, y: 0.5, z: 40}
-  - {x: -2, y: 0.5, z: 45}
-  - {x: 0, y: 0.5, z: 50}
-  - {x: 0, y: 0.5, z: 55}
-  - {x: -0, y: 0.5, z: 60}
-  - {x: -4, y: 0.5, z: 65}
-  - {x: 4, y: 0.5, z: 70}
-  - {x: -6, y: 0.5, z: 25}
-  - {x: -8, y: 0.5, z: 30}
-  - {x: 4, y: 0.5, z: 35}
+  - {x: 8, y: 0.5, z: 45}
+  - {x: 6, y: 0.5, z: 50}
+  - {x: -6, y: 0.5, z: 55}
+  - {x: -6, y: 0.5, z: 60}
+  - {x: 2, y: 0.5, z: 65}
+  - {x: 8, y: 0.5, z: 70}
+  - {x: -8, y: 0.5, z: 25}
+  - {x: 0, y: 0.5, z: 30}
+  - {x: 8, y: 0.5, z: 35}
   - {x: 4, y: 0.5, z: 40}
-  - {x: 4, y: 0.5, z: 45}
-  - {x: 2, y: 0.5, z: 50}
-  - {x: 0, y: 0.5, z: 130}
-  - {x: 6, y: 0.5, z: 135}
-  - {x: 0, y: 0.5, z: 140}
-  - {x: 2, y: 0.5, z: 145}
-  - {x: -2, y: 0.5, z: 150}
+  - {x: 8, y: 0.5, z: 45}
+  - {x: -6, y: 0.5, z: 50}
+  - {x: 8, y: 0.5, z: 55}
+  - {x: 2, y: 0.5, z: 60}
+  - {x: -8, y: 0.5, z: 65}
+  - {x: 4, y: 0.5, z: 70}
+  - {x: 4, y: 0.5, z: 25}
+  - {x: 4, y: 0.5, z: 30}
+  - {x: 4, y: 0.5, z: 35}
+  - {x: -4, y: 0.5, z: 40}
+  - {x: 0, y: 0.5, z: 45}
+  - {x: -4, y: 0.5, z: 130}
+  - {x: -4, y: 0.5, z: 135}
+  - {x: -0, y: 0.5, z: 140}
+  - {x: 8, y: 0.5, z: 145}
+  - {x: 4, y: 0.5, z: 150}
   - {x: 0, y: 0.5, z: 155}
-  - {x: 0, y: 0.5, z: 160}
-  - {x: -0, y: 0.5, z: 165}
-  - {x: -4, y: 0.5, z: 170}
-  - {x: 4, y: 0.5, z: 175}
-  - {x: -6, y: 0.5, z: 180}
+  - {x: 4, y: 0.5, z: 160}
+  - {x: 0, y: 0.5, z: 165}
+  - {x: 8, y: 0.5, z: 170}
+  - {x: 8, y: 0.5, z: 175}
+  - {x: -2, y: 0.5, z: 180}
+  - {x: 8, y: 0.5, z: 185}
+  - {x: 0, y: 0.5, z: 190}
+  - {x: 2, y: 0.5, z: 195}
+  - {x: 8, y: 0.5, z: 200}
+  - {x: 6, y: 0.5, z: 205}
+  - {x: -6, y: 0.5, z: 210}
+  - {x: -6, y: 0.5, z: 130}
+  - {x: 2, y: 0.5, z: 135}
+  - {x: 8, y: 0.5, z: 140}
+  - {x: -8, y: 0.5, z: 145}
+  - {x: 0, y: 0.5, z: 150}
+  - {x: 8, y: 0.5, z: 155}
+  - {x: 4, y: 0.5, z: 160}
+  - {x: 8, y: 0.5, z: 165}
+  - {x: -6, y: 0.5, z: 170}
+  - {x: 8, y: 0.5, z: 175}
+  - {x: 2, y: 0.5, z: 180}
   - {x: -8, y: 0.5, z: 185}
   - {x: 4, y: 0.5, z: 190}
   - {x: 4, y: 0.5, z: 195}
   - {x: 4, y: 0.5, z: 200}
-  - {x: 2, y: 0.5, z: 205}
+  - {x: 4, y: 0.5, z: 205}
   - {x: -4, y: 0.5, z: 210}
   - {x: 0, y: 0.5, z: 130}
   - {x: 0, y: 0.5, z: 135}
-  - {x: -4, y: 0.5, z: 140}
-  - {x: 0, y: 0.5, z: 145}
-  - {x: -6, y: 0.5, z: 150}
-  - {x: -4, y: 0.5, z: 155}
-  - {x: -2, y: 0.5, z: 160}
-  - {x: 0, y: 0.5, z: 270}
-  - {x: 6, y: 0.5, z: 275}
-  - {x: 0, y: 0.5, z: 280}
-  - {x: 2, y: 0.5, z: 285}
-  - {x: -2, y: 0.5, z: 290}
+  - {x: -6, y: 0.5, z: 140}
+  - {x: -4, y: 0.5, z: 145}
+  - {x: 8, y: 0.5, z: 150}
+  - {x: -2, y: 0.5, z: 155}
+  - {x: 4, y: 0.5, z: 160}
+  - {x: 4, y: 0.5, z: 165}
+  - {x: 2, y: 0.5, z: 170}
+  - {x: 0, y: 0.5, z: 175}
+  - {x: -8, y: 0.5, z: 180}
+  - {x: 0, y: 0.5, z: 185}
+  - {x: -2, y: 0.5, z: 190}
+  - {x: -2, y: 0.5, z: 195}
+  - {x: -6, y: 0.5, z: 200}
+  - {x: -4, y: 0.5, z: 205}
+  - {x: -4, y: 0.5, z: 270}
+  - {x: -4, y: 0.5, z: 275}
+  - {x: -0, y: 0.5, z: 280}
+  - {x: 8, y: 0.5, z: 285}
+  - {x: 4, y: 0.5, z: 290}
   - {x: 0, y: 0.5, z: 295}
-  - {x: 0, y: 0.5, z: 300}
-  - {x: -0, y: 0.5, z: 305}
-  - {x: -4, y: 0.5, z: 310}
-  - {x: 4, y: 0.5, z: 315}
-  - {x: -6, y: 0.5, z: 320}
+  - {x: 4, y: 0.5, z: 300}
+  - {x: 0, y: 0.5, z: 305}
+  - {x: 8, y: 0.5, z: 310}
+  - {x: 8, y: 0.5, z: 315}
+  - {x: -2, y: 0.5, z: 320}
+  - {x: 8, y: 0.5, z: 325}
+  - {x: 0, y: 0.5, z: 330}
+  - {x: 2, y: 0.5, z: 335}
+  - {x: 8, y: 0.5, z: 340}
+  - {x: 6, y: 0.5, z: 345}
+  - {x: -6, y: 0.5, z: 350}
+  - {x: -6, y: 0.5, z: 270}
+  - {x: 2, y: 0.5, z: 275}
+  - {x: 8, y: 0.5, z: 280}
+  - {x: -8, y: 0.5, z: 285}
+  - {x: 0, y: 0.5, z: 290}
+  - {x: 8, y: 0.5, z: 295}
+  - {x: 4, y: 0.5, z: 300}
+  - {x: 8, y: 0.5, z: 305}
+  - {x: -6, y: 0.5, z: 310}
+  - {x: 8, y: 0.5, z: 315}
+  - {x: 2, y: 0.5, z: 320}
   - {x: -8, y: 0.5, z: 325}
   - {x: 4, y: 0.5, z: 330}
   - {x: 4, y: 0.5, z: 335}
   - {x: 4, y: 0.5, z: 340}
-  - {x: 2, y: 0.5, z: 345}
+  - {x: 4, y: 0.5, z: 345}
   - {x: -4, y: 0.5, z: 350}
   - {x: 0, y: 0.5, z: 270}
   - {x: 0, y: 0.5, z: 275}
-  - {x: -4, y: 0.5, z: 280}
-  - {x: 0, y: 0.5, z: 285}
-  - {x: -6, y: 0.5, z: 290}
-  - {x: -4, y: 0.5, z: 295}
-  - {x: -2, y: 0.5, z: 300}
-  - {x: 2, y: 0.5, z: 305}
-  - {x: -2, y: 0.5, z: 310}
+  - {x: -6, y: 0.5, z: 280}
+  - {x: -4, y: 0.5, z: 285}
+  - {x: 8, y: 0.5, z: 290}
+  - {x: -2, y: 0.5, z: 295}
+  - {x: 4, y: 0.5, z: 300}
+  - {x: 4, y: 0.5, z: 305}
+  - {x: 2, y: 0.5, z: 310}
   - {x: 0, y: 0.5, z: 315}
-  - {x: 2, y: 0.5, z: 320}
-  - {x: -2, y: 0.5, z: 325}
-  - {x: -4, y: 0.5, z: 330}
+  - {x: -8, y: 0.5, z: 320}
+  - {x: 0, y: 0.5, z: 325}
+  - {x: -2, y: 0.5, z: 330}
+  - {x: -2, y: 0.5, z: 335}
+  - {x: -6, y: 0.5, z: 340}
+  - {x: -4, y: 0.5, z: 345}
+  - {x: 0, y: 0.5, z: 350}
+  - {x: 6, y: 0.5, z: 270}
+  - {x: 2, y: 0.5, z: 275}
+  - {x: -8, y: 0.5, z: 280}
+  - {x: -8, y: 0.5, z: 285}
+  - {x: -2, y: 0.5, z: 290}
+  - {x: 4, y: 0.5, z: 295}
+  - {x: 6, y: 0.5, z: 300}
+  - {x: 6, y: 0.5, z: 305}
+  - {x: 4, y: 0.5, z: 310}
   ObjectsRotations:
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 0, z: 0, w: 1}
   - {x: 0, y: 0, z: 0, w: 1}
   - {x: 0, y: 0, z: 0, w: 1}
   - {x: 0, y: 0, z: 0, w: 1}
