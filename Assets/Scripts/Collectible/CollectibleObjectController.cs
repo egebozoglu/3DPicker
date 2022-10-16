@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Picker3D.CollectibleRequired;
+using Picker3D.Manager;
 
 namespace Picker3D.Collectible
 {
@@ -22,7 +23,7 @@ namespace Picker3D.Collectible
 
         private void Update()
         {
-            if (transform.position.y<=-5)
+            if (transform.position.y <= -5 || GameManager.Instance.levelEnd)
             {
                 Destroy(gameObject, 0f);
             }

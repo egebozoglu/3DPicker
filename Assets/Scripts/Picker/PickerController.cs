@@ -152,6 +152,7 @@ namespace Picker3D.Picker{
             {
                 if (!triggered)
                 {
+                    GameManager.Instance.levelEnd = true;
                     other.gameObject.GetComponent<BoxCollider>().enabled = false;
                     Playable = false;
                     StartCoroutine(UIManager.Instance.EndScreen(0, GameManager.Instance.TotalCoins));

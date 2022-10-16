@@ -26,6 +26,7 @@ namespace Picker3D.Manager
         [Header("Game Mechanics")]
         [HideInInspector] public int TotalCoins = 0;
         [SerializeField] private GameManagerData gameManagerData;
+        [HideInInspector] public bool levelEnd = false;
 
         [Header("Level")]
         private LevelScriptable levelScriptable;
