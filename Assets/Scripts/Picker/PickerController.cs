@@ -152,9 +152,9 @@ namespace Picker3D.Picker{
             {
                 if (!triggered)
                 {
-                    Destroy(other.gameObject, 0f);
+                    other.gameObject.GetComponent<BoxCollider>().enabled = false;
                     Playable = false;
-                    UIManager.Instance.EndScreen(0, GameManager.Instance.TotalCoins);
+                    StartCoroutine(UIManager.Instance.EndScreen(0, GameManager.Instance.TotalCoins));
                     var level = PlayerPrefs.GetInt("Level");
                     PlayerPrefs.SetInt("Level", level + 1);
                     var coins = PlayerPrefs.GetInt("CoinAmount");

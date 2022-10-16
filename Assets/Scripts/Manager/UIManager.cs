@@ -63,8 +63,9 @@ namespace Picker3D.Manager
             gameCoinText.text = PlayerPrefs.GetInt("CoinAmount").ToString();
         }
 
-        public void EndScreen(int index, int coinAmount)
+        public IEnumerator EndScreen(int index, int coinAmount)
         {
+            yield return new WaitForSeconds(1);
             // activate screen, decide screen type and set coin amount
             ActivatingScreen(2);
             endScreens[index].SetActive(true);
