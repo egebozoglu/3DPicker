@@ -2,6 +2,7 @@
 
 - Player collects objects with a picker to end of the platform.
 - There are 15 randomly generated levels.
+- Skybox is selected automatically at the beginning of each level. You can reach them via GameManager object in the GameScene.
 - Levels gets harder.
 - If the specified number of objects are collected, the player can move to the next level, otherwise the level is played again.
 - If the player's level is more than the created level, the levels continue randomly.
