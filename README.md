@@ -7,6 +7,7 @@
 - If the specified number of objects are collected, the player can move to the next level, otherwise the level is played again.
 - If the player's level is more than the created level, the levels continue randomly.
 - At the end of the successful level, gold is earned as much as the amount of collected objects. This information is kept in PlayerPrefs and the total amount is displayed on the game screen.
+- Please use Device Simulator or a real device to test. Picker controller works with Touch Input.
 
 
 # Level Editor
